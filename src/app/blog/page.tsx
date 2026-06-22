@@ -18,11 +18,11 @@ export default function BlogPage() {
     <>
       <HeroSection
         eyebrow="Блог"
-        title="Статьи, которые помогают выбрать решение, а не просто собрать трафик."
-        description="Блог NORD FORM работает как часть продажи: объясняет, вдохновляет и ведет к следующему осознанному шагу."
+        title="Статьи, которые помогают выбрать контейнерное решение."
+        description="Блог объясняет планировку, хранение, фасады, витрины и следующий осознанный шаг перед расчетом."
         image={{
-          src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современный фасад загородного дома"
+          src: "/images/products/spa-bath-bany/spa-bany-s-zadi-drova.webp",
+          alt: "SPA-баня из контейнера с дровником и теплой подсветкой"
         }}
         primaryCta={{ label: "Получить каталог", href: "/catalog" }}
         secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
@@ -32,8 +32,8 @@ export default function BlogPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Материалы"
-              title="Стартовые SEO-статьи"
-              description="Каждая статья связывает поисковый интерес с продуктом, проектом или лид-магнитом."
+              title="Материалы по четырем коллекциям"
+              description="Каждая статья связана с продуктом, коллекцией или каталогом и использует тот же визуальный язык."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

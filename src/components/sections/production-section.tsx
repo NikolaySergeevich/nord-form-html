@@ -21,8 +21,8 @@ export function ProductionSection() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-md">
               <Image
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1500&q=85"
-                alt="Архитектурное производство и строительные материалы"
+                src="/images/products/garden-module/sadovyi-modul-vnytri-pervyi-variant.webp"
+                alt="Внутренняя хозяйственная зона садового модуля с ОСБ-обшивкой"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover opacity-90"

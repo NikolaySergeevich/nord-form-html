@@ -10,7 +10,7 @@ import { collections } from "@/data/collections";
 
 export const metadata: Metadata = {
   title: "Коллекции",
-  description: "Коллекции NORD FORM: SPA, участок, хранение и бизнес."
+  description: "Коллекции NORD FORM: садовый модуль, хозяйственный модуль, SPA-баня и цветочный павильон."
 };
 
 export default function CollectionsPage() {
@@ -18,11 +18,11 @@ export default function CollectionsPage() {
     <>
       <HeroSection
         eyebrow="Коллекции"
-        title="Выберите сценарий, а не просто модуль."
-        description="Коллекции помогают начать с назначения объекта: восстановление, работа на участке, хранение или коммерческий запуск."
+        title="Четыре коллекции, под которые уже есть реальные визуальные сценарии."
+        description="Садовый модуль, хозяйственный хозблок, SPA-баня и цветочный павильон собраны в единой палитре графита, дерева и теплой подсветки."
         image={{
-          src: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современная архитектура на участке"
+          src: "/images/products/hozyistvennyi-module/hozblok-obshiy-vid.webp",
+          alt: "Хозяйственный модуль из графитового контейнера с деревянными рейками"
         }}
         primaryCta={{ label: "Получить каталог", href: "/catalog" }}
         secondaryCta={{ label: "Обсудить проект", href: "/contacts" }}
@@ -32,8 +32,8 @@ export default function CollectionsPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Направления"
-              title="Каждая коллекция отвечает на отдельную задачу."
-              description="Мы разделили решения так, чтобы путь пользователя начинался с понятного сценария."
+              title="Каждая коллекция отвечает на отдельную задачу участка или бизнеса."
+              description="Все карточки используют локальные фотографии из продуктовых папок, поэтому визуальный ряд остается цельным."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">

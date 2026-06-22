@@ -4,12 +4,12 @@ export const navigation: NavigationItem[] = [
   {
     label: "Коллекции",
     href: "/collections",
-    description: "SPA, участок, хранение и бизнес"
+    description: "Садовый модуль, хозблок, SPA-баня и цветочный павильон"
   },
   {
     label: "Проекты",
     href: "/projects",
-    description: "Реализованные модульные объекты"
+    description: "Модульные объекты в графите, дереве и теплом свете"
   },
   {
     label: "Производство",
@@ -30,12 +30,12 @@ export const navigation: NavigationItem[] = [
 
 export const footerNavigation = [
   {
-    title: "Направления",
+    title: "Коллекции",
     items: [
-      { label: "SPA и отдых", href: "/collections/spa" },
-      { label: "Сад и участок", href: "/collections/garden" },
-      { label: "Хранение", href: "/collections/storage" },
-      { label: "Бизнес", href: "/collections/business" }
+      { label: "Садовый модуль", href: "/collections/garden-module" },
+      { label: "Хозяйственный модуль", href: "/collections/hozyistvennyi-module" },
+      { label: "SPA-баня", href: "/collections/spa-bath-bany" },
+      { label: "Цветочный модуль", href: "/collections/workshop-flowers-module" }
     ]
   },
   {

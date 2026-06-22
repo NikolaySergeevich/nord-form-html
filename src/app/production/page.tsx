@@ -26,10 +26,10 @@ export default function ProductionPage() {
       <HeroSection
         eyebrow="Производство"
         title="Качество модульного объекта начинается до монтажа."
-        description="Мы показываем процесс, материалы и проектную логику, чтобы доверие строилось не на обещаниях, а на прозрачности."
+        description="Мы показываем материалы, инженерную логику и будущий сценарий использования, чтобы объект выглядел цельно до монтажа и после него."
         image={{
-          src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85",
-          alt: "Архитектурное производство и материалы"
+          src: "/images/products/hozyistvennyi-module/hozblok-vid-vnytri.webp",
+          alt: "Внутреннее хранение и материалы хозяйственного модуля"
         }}
         primaryCta={{ label: "Получить консультацию", href: "/contacts" }}
         secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
@@ -41,7 +41,7 @@ export default function ProductionPage() {
             <SectionHeader
               eyebrow="Доверие"
               title="Что обязательно раскрывает производственная страница."
-              description="Посетитель должен увидеть не только красивый результат, но и систему, которая этот результат делает повторяемым."
+              description="Посетитель должен увидеть не только красивый фасад, но и систему хранения, инженерии и материалов."
             />
           </Reveal>
           <div className="mt-12 grid gap-4 md:grid-cols-2">

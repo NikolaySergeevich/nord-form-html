@@ -104,9 +104,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-68"
+            className="object-cover opacity-[0.86]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background-dark/10 via-background-dark/30 to-background-dark/88" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background-dark/10 via-background-dark/26 to-background-dark/86" />
           <Container className="relative flex min-h-[70vh] items-end pb-14 pt-28">
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-text-inverse/65">

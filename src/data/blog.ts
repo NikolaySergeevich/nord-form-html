@@ -4,22 +4,22 @@ export const blogCategories = [
   {
     slug: "uchastok",
     title: "Для участка",
-    description: "Идеи хранения, инфраструктуры и визуального порядка на загородном участке."
+    description: "Идеи хранения, дровников, техники и визуального порядка на загородном участке."
   },
   {
     slug: "spa",
-    title: "SPA и отдых",
-    description: "Материалы о современных банях, SPA-модулях и приватных зонах отдыха."
+    title: "SPA и баня",
+    description: "Материалы о контейнерных банях, парных, душевых и технических нишах."
   },
   {
     slug: "business",
     title: "Для бизнеса",
-    description: "Модульные павильоны, магазины, студии и быстрый запуск коммерческих точек."
+    description: "Модульные павильоны, витрины, цветочные магазины и быстрый запуск retail-точек."
   },
   {
     slug: "architecture",
     title: "Архитектура",
-    description: "Форма, материалы, фасады и визуальная культура модульной архитектуры."
+    description: "Графитовый металл, дерево, подсветка и визуальная культура контейнерной архитектуры."
   }
 ] as const;
 
@@ -27,45 +27,47 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "modern-sauna",
     slug: "modern-sauna",
-    title: "Современная баня: что важно учитывать",
+    title: "Контейнерная баня: как разложить зоны по длине",
     excerpt:
-      "Разбираем планировку, материалы, инженерные решения и визуальную логику современной SPA-зоны.",
+      "Комната отдыха, моечная, парная и техническая ниша работают лучше, когда движение внутри бани выстроено последовательно.",
     category: "spa",
     coverImage: {
-      src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
-      alt: "Современный интерьер SPA-зоны"
+      src: "/images/products/spa-bath-bany/spa-bany-predbannik.webp",
+      alt: "Комната отдыха в SPA-бане из контейнера"
     },
     publishedAt: "2026-06-01",
     readingTime: "6 минут",
     tags: ["SPA", "баня", "планировка"],
-    relatedProductIds: ["spa-house"],
-    relatedCollectionIds: ["spa"],
+    relatedProductIds: ["spa-bath-bany"],
+    relatedCollectionIds: ["spa-bath-bany"],
     leadMagnetId: "spa-guide",
     seo: {
-      title: "Современная баня: что важно учитывать",
-      description: "Как выбрать современную баню: планировка, материалы, инженерия и сценарий использования."
+      title: "Контейнерная баня: планировка по зонам",
+      description:
+        "Как спланировать баню из 40-футового контейнера: комната отдыха, моечная, парная и техническая ниша."
     }
   },
   {
     id: "storage-ideas",
     slug: "storage-ideas",
-    title: "Как организовать идеальное хранение на участке",
+    title: "Как организовать хранение на участке без времянок",
     excerpt:
-      "Почему хранение лучше проектировать как часть архитектуры участка, а не решать остаточным принципом.",
+      "Хозблок может быть архитектурным объектом: с графитовым фасадом, дровником, светом и понятным хранением внутри.",
     category: "uchastok",
     coverImage: {
-      src: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1400&q=85",
-      alt: "Современный загородный фасад"
+      src: "/images/products/hozyistvennyi-module/hozblok-vid-vnytri.webp",
+      alt: "Внутреннее хранение садовой техники в хозяйственном модуле"
     },
     publishedAt: "2026-06-05",
     readingTime: "5 минут",
     tags: ["участок", "хранение", "хозблок"],
-    relatedProductIds: ["garden-storage"],
-    relatedCollectionIds: ["storage"],
+    relatedProductIds: ["garden-module", "hozyistvennyi-module"],
+    relatedCollectionIds: ["garden-module", "hozyistvennyi-module"],
     leadMagnetId: "catalog",
     seo: {
       title: "Как организовать хранение на участке",
-      description: "Идеи хранения на участке: модульный хозблок, техника, инвентарь и визуальный порядок."
+      description:
+        "Идеи хранения на участке: контейнерный хозблок, садовая техника, инвентарь, дровник и визуальный порядок."
     }
   },
   {
@@ -73,43 +75,45 @@ export const blogArticles: BlogArticle[] = [
     slug: "flower-shop",
     title: "Как открыть цветочный магазин в модульном формате",
     excerpt:
-      "Что важно продумать до запуска: место, витрина, поток клиентов, инженерия и внешний образ точки.",
+      "Что важно продумать до запуска: витрина, свет, поток клиентов, рабочая зона, хранение и внешний образ точки.",
     category: "business",
     coverImage: {
-      src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
-      alt: "Современное коммерческое пространство"
+      src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-cnaruzhi.webp",
+      alt: "Цветочный магазин в контейнерном модуле с витриной"
     },
     publishedAt: "2026-06-10",
     readingTime: "7 минут",
-    tags: ["бизнес", "магазин", "павильон"],
-    relatedProductIds: ["flower-studio"],
-    relatedCollectionIds: ["business"],
+    tags: ["бизнес", "цветы", "павильон"],
+    relatedProductIds: ["workshop-flowers-module"],
+    relatedCollectionIds: ["workshop-flowers-module"],
     leadMagnetId: "business-guide",
     seo: {
-      title: "Как открыть цветочный магазин",
-      description: "Модульный цветочный магазин: планировка, витрина, инженерия и быстрый запуск."
+      title: "Как открыть цветочный магазин в модульном формате",
+      description:
+        "Модульный цветочный магазин: витрина, фасад, рабочая зона, инженерия и быстрый запуск."
     }
   },
   {
     id: "graphite-and-wood",
     slug: "graphite-and-wood",
-    title: "Графит и дерево: почему это сочетание работает",
+    title: "Графит, дерево и теплый свет: почему сочетание работает",
     excerpt:
-      "Как темный фасад, теплая фактура дерева и крупное остекление создают спокойный архитектурный образ.",
+      "Темный контейнер, вертикальные деревянные рейки и янтарная подсветка превращают технический объект в часть ландшафта.",
     category: "architecture",
     coverImage: {
-      src: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1400&q=85",
-      alt: "Современная архитектура с деревянной отделкой"
+      src: "/images/products/garden-module/sadovyi-modul-s-boky.webp",
+      alt: "Графитовый садовый модуль с деревянными рейками и теплой подсветкой"
     },
     publishedAt: "2026-06-14",
     readingTime: "4 минуты",
     tags: ["архитектура", "фасад", "материалы"],
-    relatedProductIds: ["spa-house", "garden-hub"],
-    relatedCollectionIds: ["spa", "garden"],
+    relatedProductIds: ["garden-module", "hozyistvennyi-module", "spa-bath-bany"],
+    relatedCollectionIds: ["garden-module", "hozyistvennyi-module", "spa-bath-bany"],
     leadMagnetId: "catalog",
     seo: {
-      title: "Графит и дерево в современной архитектуре",
-      description: "Почему сочетание графита и дерева подходит для современной модульной архитектуры."
+      title: "Графит, дерево и теплый свет в контейнерной архитектуре",
+      description:
+        "Почему сочетание графитового металла, деревянных реек и теплой подсветки подходит для модульных объектов."
     }
   }
 ];

@@ -17,10 +17,10 @@ export default function CatalogPage() {
       <HeroSection
         eyebrow="PDF каталог"
         title="Начните с каталога, если хотите спокойно сравнить направления."
-        description="Каталог помогает увидеть коллекции, продукты, комплектации и вопросы, которые стоит обсудить перед расчетом."
+        description="Каталог помогает сравнить четыре контейнерные коллекции, комплектации и вопросы, которые стоит обсудить перед расчетом."
         image={{
-          src: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современный архитектурный интерьер"
+          src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-cnaruzhi.webp",
+          alt: "Цветочный модуль из контейнера с витриной и теплой подсветкой"
         }}
         primaryCta={{ label: "Заполнить форму", href: "#catalog-form" }}
         secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
@@ -32,7 +32,7 @@ export default function CatalogPage() {
               <SectionHeader
                 eyebrow="Lead Magnet"
                 title="Каталог модульных решений NORD FORM"
-                description="Оставьте контакты. На следующем этапе эту форму можно подключить к CRM, email, Telegram или Viber."
+                description="Оставьте контакты, чтобы получить подборку по садовому модулю, хозблоку, SPA-бане и цветочному павильону."
               />
             </Reveal>
             <Reveal delay={0.08}>

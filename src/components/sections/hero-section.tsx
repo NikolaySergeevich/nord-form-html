@@ -41,9 +41,9 @@ export function HeroSection({
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-72"
+        className="object-cover opacity-[0.88]"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background-dark/20 via-background-dark/28 to-background-dark/86" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background-dark/10 via-background-dark/24 to-background-dark/84" />
       <Container className="relative flex min-h-[calc(100vh-5rem)] items-end pb-14 pt-28">
         <div className="grid w-full gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="max-w-5xl">

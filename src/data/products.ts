@@ -3,225 +3,340 @@ import type { Product } from "@/types/content";
 
 export const products: Product[] = [
   {
-    id: "spa-house",
-    slug: "spa-house",
-    title: "SPA House",
-    shortTitle: "SPA House",
-    collectionId: "spa",
-    category: "spa",
-    summary: "Модульная баня с зоной отдыха и террасой в архитектуре современного загородного дома.",
+    id: "garden-module",
+    slug: "garden-module",
+    title: "Garden Module",
+    shortTitle: "Garden Module",
+    collectionId: "garden-module",
+    category: "garden",
+    summary:
+      "40-футовый садовый модуль с хозблоком, дровником, мини-мастерской и гаражной зоной для техники.",
     description:
-      "SPA House объединяет парную, душевую, lounge-зону и террасу в одной спокойной форме. Решение создается для приватного отдыха и премиального сценария использования.",
+      "Современный хозблок на базе морского контейнера объединяет несколько полезных зон для загородного участка. Снаружи это графитовый контейнер с ребристым металлом, вертикальными деревянными рейками, встроенным дровником и теплой подсветкой. Внутри предусмотрены хозяйственная зона с ОСБ-обшивкой и гаражное помещение в графитовом цвете.",
     heroImage: {
-      src: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1800&q=85",
-      alt: "Современный деревянный дом в лесу"
+      src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
+      alt: "Садовый модуль с дровником, деревянными рейками и вечерней подсветкой"
     },
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=85",
-        alt: "Минималистичный интерьер с деревом"
+        src: "/images/products/garden-module/sadovyi-modul-s-boky.webp",
+        alt: "Боковой вид садового модуля из графитового контейнера"
       },
       {
-        src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
-        alt: "Современная зона отдыха с панорамным окном"
+        src: "/images/products/garden-module/sadovyi-modul-vnytri-pervyi-variant.webp",
+        alt: "Внутри садового модуля с ОСБ-обшивкой и зоной хранения"
       },
       {
-        src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
-        alt: "Теплый интерьер с натуральными материалами"
+        src: "/images/products/garden-module/sadovyi-modul-vnytri-vtoroy-variant.webp",
+        alt: "Гаражная зона садового модуля для сезонной техники"
       }
     ],
-    area: "24-42 м²",
-    dimensions: "от 6 x 4 м",
+    area: "около 28 м²",
+    dimensions: "40 футов / около 12 x 2,4 м",
     basePrice: "по расчету",
     specs: [
-      { label: "Назначение", value: "SPA, отдых, гостевая зона" },
-      { label: "Сезонность", value: "круглогодично" },
-      { label: "Готовность", value: "высокая заводская сборка" }
+      { label: "Назначение", value: "хозблок, дровник, мастерская, гараж" },
+      { label: "Фасад", value: "графитовый металл, дерево, теплый свет" },
+      { label: "Доступ", value: "отдельная дверь и контейнерные ворота" }
     ],
     layouts: [
       {
-        id: "spa-compact",
-        title: "Compact SPA",
-        area: "24 м²",
+        id: "garden-zones",
+        title: "Хозблок + дровник + гараж",
+        area: "40-футовый контейнер",
         image: {
-          src: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&q=85",
-          alt: "Планировочная композиция современного интерьера"
+          src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
+          alt: "Фасад садового модуля с центральным дровником"
+        }
+      }
+    ],
+    configurations: [
+      {
+        id: "garden-workshop-storage",
+        title: "Хозяйственная зона",
+        features: ["ОСБ-обшивка", "Полки и стеллажи", "Рабочая зона", "Хранение инвентаря"]
+      },
+      {
+        id: "garden-garage",
+        title: "Гаражная зона",
+        features: ["Контейнерные ворота", "Место для техники", "Внутренний свет", "Розетки"]
+      }
+    ],
+    materials: [
+      {
+        id: "graphite-metal",
+        title: "Графитовый металл",
+        description: "Темный ребристый корпус контейнера сохраняет индустриальную фактуру."
+      },
+      {
+        id: "wood-slats",
+        title: "Деревянные рейки",
+        description: "Теплая вертикальная отделка смягчает фасад и связывает объект с ландшафтом."
+      },
+      {
+        id: "osb-interior",
+        title: "ОСБ внутри",
+        description: "Практичная обшивка для хозблока, полок, стеллажей и рабочей зоны."
+      }
+    ],
+    engineering: ["Электрика", "Архитектурная подсветка", "Вентиляция", "Розетки", "Подготовка под стеллажи"],
+    faq,
+    seo: {
+      title: "Garden Module - садовый модуль с дровником",
+      description:
+        "Garden Module NORD FORM: садовый хозблок, дровник, мастерская и гараж для техники на базе 40-футового контейнера."
+    }
+  },
+  {
+    id: "hozyistvennyi-module",
+    slug: "hozyistvennyi-module",
+    title: "Хозяйственный модуль",
+    shortTitle: "Хозмодуль",
+    collectionId: "hozyistvennyi-module",
+    category: "storage",
+    summary:
+      "Практичный контейнерный хозблок для садовой техники, инструмента, инвентаря, сезонных вещей и дров.",
+    description:
+      "Хозяйственный модуль решает задачу аккуратного хранения на участке. Темный графитовый фасад с деревянными рейками и наружной подсветкой выглядит как часть ландшафтной архитектуры, а пристроенный справа дровник позволяет хранить дрова под навесом и не перегружать участок отдельной постройкой.",
+    heroImage: {
+      src: "/images/products/hozyistvennyi-module/hozblok-obshiy-vid.webp",
+      alt: "Общий вид хозяйственного модуля из графитового контейнера"
+    },
+    gallery: [
+      {
+        src: "/images/products/hozyistvennyi-module/hozblok-vid-s-peredi.webp",
+        alt: "Фронтальный вид хозблока с деревянными рейками и подсветкой"
+      },
+      {
+        src: "/images/products/hozyistvennyi-module/hozblok-vid-s-levogo-flanga.webp",
+        alt: "Хозяйственный модуль со стороны левого фланга"
+      },
+      {
+        src: "/images/products/hozyistvennyi-module/hozblok-vid-s-pravogo-flanga.webp",
+        alt: "Хозяйственный модуль со стороны правого фланга"
+      },
+      {
+        src: "/images/products/hozyistvennyi-module/hozblok-vid-vnytri.webp",
+        alt: "Внутреннее хранение в хозяйственном модуле"
+      }
+    ],
+    area: "около 28 м²",
+    dimensions: "40 футов / около 12 x 2,4 м",
+    basePrice: "по расчету",
+    specs: [
+      { label: "Назначение", value: "техника, инструмент, инвентарь" },
+      { label: "Дополнение", value: "открытый дровник справа" },
+      { label: "Внутри", value: "стеллажи, хранение, место для газонокосилки" }
+    ],
+    layouts: [
+      {
+        id: "storage-layout",
+        title: "Хранение + дровник",
+        area: "40-футовый контейнер",
+        image: {
+          src: "/images/products/hozyistvennyi-module/hozblok-vid-s-peredi.webp",
+          alt: "Фасад хозяйственного модуля с графитовым корпусом"
+        }
+      }
+    ],
+    configurations: [
+      {
+        id: "storage-base",
+        title: "Storage Base",
+        features: ["Сухое хранение", "Внутренний свет", "Стеллажи", "Наружный дровник"]
+      },
+      {
+        id: "storage-plus",
+        title: "Storage Plus",
+        features: ["Рабочая зона", "Дополнительные розетки", "Усиленное хранение", "Фасадная подсветка"]
+      }
+    ],
+    materials: [
+      {
+        id: "graphite-shell",
+        title: "Графитовый контейнер",
+        description: "Практичная темная оболочка, которая не спорит с зеленью и деревянным забором."
+      },
+      {
+        id: "warm-light",
+        title: "Теплая подсветка",
+        description: "Свет выделяет рельеф металла и делает объект аккуратным вечером."
+      }
+    ],
+    engineering: ["Электрика", "Наружное освещение", "Вентиляция", "Подготовка под хранение техники"],
+    faq,
+    seo: {
+      title: "Хозяйственный модуль - контейнерный хозблок",
+      description:
+        "Хозяйственный модуль NORD FORM для хранения садовой техники, инструмента, инвентаря, сезонных вещей и дров."
+    }
+  },
+  {
+    id: "spa-bath-bany",
+    slug: "spa-bath-bany",
+    title: "SPA Bath Bany",
+    shortTitle: "SPA-баня",
+    collectionId: "spa-bath-bany",
+    category: "spa",
+    summary:
+      "Контейнерная баня с комнатой отдыха, моечной, парной и технической нишей для скрытых коммуникаций.",
+    description:
+      "SPA-баня строится на понятной логике движения: вход в сухую комнату отдыха, затем моечная, после нее парная и техническая ниша для обслуживания. Снаружи контейнер остается современным графитовым SPA-блоком с деревянными рейками, теплой подсветкой, дровником и дымоходом.",
+    heroImage: {
+      src: "/images/products/spa-bath-bany/spa-bany-s-fronta.webp",
+      alt: "Фронтальный вид SPA-бани из графитового контейнера"
+    },
+    gallery: [
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-vhod.webp",
+        alt: "Вход в SPA-баню с теплым светом внутри"
+      },
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-predbannik.webp",
+        alt: "Комната отдыха и раздевалка в контейнерной бане"
+      },
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-parilka.webp",
+        alt: "Парная с деревянными полками и подсветкой"
+      },
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-s-flanga-levyi.webp",
+        alt: "Левый фланг графитовой SPA-бани"
+      },
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-s-flanga-prafyi.webp",
+        alt: "Правый фланг SPA-бани из контейнера"
+      },
+      {
+        src: "/images/products/spa-bath-bany/spa-bany-s-zadi-drova.webp",
+        alt: "Задняя часть SPA-бани с дровником"
+      }
+    ],
+    area: "около 28 м²",
+    dimensions: "40 футов / около 12 x 2,4 м",
+    basePrice: "по расчету",
+    specs: [
+      { label: "Комната отдыха", value: "около 5,8-6,0 м по длине" },
+      { label: "Моечная", value: "около 2,0-2,2 м по длине" },
+      { label: "Парная", value: "около 2,6-2,8 м по длине" }
+    ],
+    layouts: [
+      {
+        id: "spa-linear",
+        title: "Раздевалка -> моечная -> парная -> техниша",
+        area: "40-футовый контейнер",
+        image: {
+          src: "/images/products/spa-bath-bany/spa-bany-vhod.webp",
+          alt: "Входная зона контейнерной SPA-бани"
         }
       }
     ],
     configurations: [
       {
         id: "spa-base",
-        title: "Base",
-        features: ["Парная", "Душевая", "Комната отдыха", "Подготовка инженерии"]
+        title: "SPA Base",
+        features: ["Комната отдыха", "Моечная", "Парная", "Техническая ниша"]
       },
       {
-        id: "spa-premium",
-        title: "Premium",
-        features: ["Расширенная lounge-зона", "Терраса", "Панорамное остекление", "Премиальная отделка"]
+        id: "spa-comfort",
+        title: "SPA Comfort",
+        features: ["Печь и камни", "Дымоход", "Бойлер", "Теплая подсветка"]
       }
     ],
     materials: [
       {
-        id: "thermo-wood",
-        title: "Термодерево",
-        description: "Теплая фактура для внутренней и фасадной отделки."
+        id: "sauna-wood",
+        title: "Дерево в парной",
+        description: "Теплая отделка формирует спокойное банное пространство."
       },
       {
-        id: "graphite-metal",
-        title: "Графитовый металл",
-        description: "Сдержанный внешний контур в духе современной архитектуры."
+        id: "graphite-spa-shell",
+        title: "Графитовый фасад",
+        description: "Темный контейнерный корпус превращает баню в современный SPA-блок."
       }
     ],
-    engineering: ["Электрика", "Вентиляция", "Водоснабжение", "Отопление"],
+    engineering: ["Электрика", "Водоснабжение", "Слив и трап", "Вентиляция", "Дымоход", "Техническая ниша"],
     faq,
     seo: {
-      title: "SPA House — модульная баня",
-      description: "SPA House NORD FORM: современная модульная баня с зоной отдыха и террасой."
+      title: "SPA Bath Bany - баня из контейнера",
+      description:
+        "SPA Bath Bany NORD FORM: баня из 40-футового контейнера с комнатой отдыха, моечной, парной и технической нишей."
     }
   },
   {
-    id: "garden-hub",
-    slug: "garden-hub",
-    title: "Garden Hub",
-    shortTitle: "Garden Hub",
-    collectionId: "garden",
-    category: "garden",
-    summary: "Универсальный модуль для участка: мастерская, кабинет, садовая кухня или гостевая зона.",
-    description:
-      "Garden Hub добавляет участку функциональную архитектуру без ощущения временной постройки. Его можно адаптировать под работу, хранение или отдых.",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=85",
-      alt: "Современный дом с аккуратным участком"
-    },
-    gallery: [
-      {
-        src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85",
-        alt: "Светлая рабочая студия"
-      },
-      {
-        src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
-        alt: "Современный фасад загородного дома"
-      }
-    ],
-    area: "18-36 м²",
-    dimensions: "от 6 x 3 м",
-    basePrice: "по расчету",
-    specs: [
-      { label: "Назначение", value: "кабинет, мастерская, садовая кухня" },
-      { label: "Фасад", value: "графит, дерево, стекло" },
-      { label: "Планировка", value: "адаптируется под сценарий" }
-    ],
-    layouts: [],
-    configurations: [
-      {
-        id: "garden-work",
-        title: "Work",
-        features: ["Рабочая зона", "Хранение", "Панорамное окно"]
-      }
-    ],
-    materials: [],
-    engineering: ["Электрика", "Освещение", "Опциональное отопление"],
-    faq,
-    seo: {
-      title: "Garden Hub — модуль для участка",
-      description: "Garden Hub NORD FORM: современный модуль для дачи, работы и загородной инфраструктуры."
-    }
-  },
-  {
-    id: "garden-storage",
-    slug: "garden-storage",
-    title: "Garden Storage",
-    shortTitle: "Storage",
-    collectionId: "storage",
-    category: "storage",
-    summary: "Архитектурный модуль хранения для садовой техники, инвентаря и сезонных вещей.",
-    description:
-      "Garden Storage решает практическую задачу хранения и сохраняет визуальную чистоту участка. Подходит для техники, инструментов и сезонного оборудования.",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85",
-      alt: "Лаконичная современная архитектура в природном окружении"
-    },
-    gallery: [
-      {
-        src: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1400&q=85",
-        alt: "Современный загородный фасад"
-      },
-      {
-        src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
-        alt: "Современный дом с теплым вечерним светом"
-      }
-    ],
-    area: "12-30 м²",
-    dimensions: "от 4 x 3 м",
-    basePrice: "по расчету",
-    specs: [
-      { label: "Назначение", value: "хранение, техника, инвентарь" },
-      { label: "Доступ", value: "распашные или сдвижные двери" },
-      { label: "Опции", value: "стеллажи, освещение, розетки" }
-    ],
-    layouts: [],
-    configurations: [
-      {
-        id: "storage-base",
-        title: "Storage Base",
-        features: ["Сухое хранение", "Свет", "Система полок"]
-      }
-    ],
-    materials: [],
-    engineering: ["Электрика", "Вентиляция", "Внутреннее освещение"],
-    faq,
-    seo: {
-      title: "Garden Storage — модуль хранения",
-      description: "Garden Storage NORD FORM: современный хозблок и модульное хранение для участка."
-    }
-  },
-  {
-    id: "flower-studio",
-    slug: "flower-studio",
-    title: "Flower Studio",
-    shortTitle: "Flower Studio",
-    collectionId: "business",
+    id: "workshop-flowers-module",
+    slug: "workshop-flowers-module",
+    title: "Workshop Flowers Module",
+    shortTitle: "Flowers Module",
+    collectionId: "workshop-flowers-module",
     category: "business",
-    summary: "Коммерческий модуль для цветочного магазина, кофейни или компактной retail-точки.",
+    summary:
+      "Коммерческий цветочный модуль с графитовым фасадом, витриной, вывеской, рабочей зоной и атмосферной подсветкой.",
     description:
-      "Flower Studio создает сильное первое впечатление и помогает быстро запустить коммерческое пространство с узнаваемым фасадом.",
+      "Модуль подходит для цветочного магазина, флористической мастерской или компактной retail-точки. Внешне это темный контейнерный павильон с деревянными рейками, крупной витриной, теплым светом и заметной вывеской. Внутри можно разместить растения, букеты, рабочую стойку, упаковку и небольшую зону общения с клиентом.",
     heroImage: {
-      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85",
-      alt: "Современное коммерческое здание"
+      src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-cnaruzhi.webp",
+      alt: "Цветочный магазин в графитовом контейнере с витриной и теплой подсветкой"
     },
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
-        alt: "Современный коммерческий интерьер"
+        src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-vnytri-pervyi-variant.webp",
+        alt: "Первый вариант интерьера цветочного модуля с растениями"
       },
       {
-        src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
-        alt: "Архитектурный объект в природном окружении"
+        src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-vnytri-vtoroi-variant.webp",
+        alt: "Второй вариант интерьера цветочного магазина из контейнера"
       }
     ],
-    area: "15-32 м²",
-    dimensions: "от 5 x 3 м",
+    area: "около 28 м²",
+    dimensions: "40 футов / около 12 x 2,4 м",
     basePrice: "по расчету",
     specs: [
-      { label: "Назначение", value: "цветы, кофе, retail, офис продаж" },
-      { label: "Фасад", value: "витрина, вывеска, подсветка" },
-      { label: "Запуск", value: "быстрая подготовка точки" }
+      { label: "Назначение", value: "цветы, retail, мастерская флориста" },
+      { label: "Фасад", value: "витрина, вывеска, деревянные рейки" },
+      { label: "Внутри", value: "растения, рабочая стойка, хранение упаковки" }
     ],
-    layouts: [],
-    configurations: [
+    layouts: [
       {
-        id: "business-retail",
-        title: "Retail",
-        features: ["Витринная зона", "Рабочая стойка", "Складская ниша"]
+        id: "flowers-retail",
+        title: "Витрина + торговый зал + рабочая зона",
+        area: "40-футовый контейнер",
+        image: {
+          src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-cnaruzhi.webp",
+          alt: "Фасад цветочного модуля с вывеской и витриной"
+        }
       }
     ],
-    materials: [],
-    engineering: ["Электрика", "Освещение", "Климат", "Подготовка под кассу"],
+    configurations: [
+      {
+        id: "flowers-retail-base",
+        title: "Retail Base",
+        features: ["Витринное остекление", "Вывеска", "Рабочая стойка", "Свет"]
+      },
+      {
+        id: "flowers-retail-plus",
+        title: "Retail Plus",
+        features: ["Дополнительное хранение", "Климат", "Полки для растений", "Декоративная подсветка"]
+      }
+    ],
+    materials: [
+      {
+        id: "retail-glass",
+        title: "Крупная витрина",
+        description: "Остекление показывает растения и создает сильное первое впечатление."
+      },
+      {
+        id: "flower-warm-interior",
+        title: "Теплый интерьер",
+        description: "Дерево, свет и темный фон помогают букетам и растениям выглядеть выразительно."
+      }
+    ],
+    engineering: ["Электрика", "Освещение", "Климат", "Подготовка под кассу", "Розетки для рабочей зоны"],
     faq,
     seo: {
-      title: "Flower Studio — модульный магазин",
-      description: "Flower Studio NORD FORM: коммерческий модуль для цветочного магазина, кофейни и retail."
+      title: "Workshop Flowers Module - цветочный магазин из контейнера",
+      description:
+        "Workshop Flowers Module NORD FORM: цветочный магазин и флористическая мастерская в модульном контейнере."
     }
   }
 ];
