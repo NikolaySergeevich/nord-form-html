@@ -1,0 +1,102 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: ["class"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem"
+      },
+      screens: {
+        "2xl": "1440px"
+      }
+    },
+    extend: {
+      colors: {
+        background: {
+          primary: "hsl(var(--background-primary) / <alpha-value>)",
+          secondary: "hsl(var(--background-secondary) / <alpha-value>)",
+          dark: "hsl(var(--background-dark) / <alpha-value>)"
+        },
+        surface: {
+          primary: "hsl(var(--surface-primary) / <alpha-value>)",
+          muted: "hsl(var(--surface-muted) / <alpha-value>)",
+          elevated: "hsl(var(--surface-elevated) / <alpha-value>)"
+        },
+        text: {
+          primary: "hsl(var(--text-primary) / <alpha-value>)",
+          secondary: "hsl(var(--text-secondary) / <alpha-value>)",
+          inverse: "hsl(var(--text-inverse) / <alpha-value>)"
+        },
+        border: "hsl(var(--border) / <alpha-value>)",
+        accent: {
+          primary: "hsl(var(--accent-primary) / <alpha-value>)",
+          secondary: "hsl(var(--accent-secondary) / <alpha-value>)",
+          soft: "hsl(var(--accent-soft) / <alpha-value>)"
+        },
+        success: "hsl(var(--success) / <alpha-value>)",
+        error: "hsl(var(--error) / <alpha-value>)",
+        focus: "hsl(var(--focus) / <alpha-value>)"
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-inter)", "system-ui", "sans-serif"]
+      },
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.55rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.5rem", { lineHeight: "2rem" }],
+        "2xl": ["2rem", { lineHeight: "2.4rem" }],
+        "3xl": ["2.75rem", { lineHeight: "3.2rem" }],
+        "4xl": ["3.5rem", { lineHeight: "3.9rem" }]
+      },
+      borderRadius: {
+        sm: "var(--radius-sm)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
+        xl: "var(--radius-xl)"
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)"
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" }
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" }
+        }
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out"
+      },
+      screens: {
+        xs: "360px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px"
+      }
+    }
+  },
+  plugins: []
+};
+
+export default config;
