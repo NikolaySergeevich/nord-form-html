@@ -10,7 +10,7 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Продукты",
-  description: "Модульные продукты NORD FORM для участка, отдыха, хранения и бизнеса."
+  description: "Контейнерные продукты NORD FORM для участка, хранения, SPA и бизнеса."
 };
 
 export default function ProductsPage() {
@@ -18,11 +18,11 @@ export default function ProductsPage() {
     <>
       <HeroSection
         eyebrow="Продукты"
-        title="Модульные решения с готовой архитектурной логикой."
-        description="Каждый продукт можно адаптировать под сценарий, участок, сезонность и инженерные требования."
+        title="Контейнерные решения с готовой архитектурной логикой."
+        description="Каждый продукт опирается на конкретный сценарий: дровник и гараж, хозяйственное хранение, баня или коммерческая витрина."
         image={{
-          src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современный дом в вечернем свете"
+          src: "/images/products/spa-bath-bany/spa-bany-s-fronta.webp",
+          alt: "SPA-баня из графитового контейнера с теплой подсветкой"
         }}
         primaryCta={{ label: "Получить расчет", href: "/contacts" }}
         secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
@@ -32,8 +32,8 @@ export default function ProductsPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Линейка"
-              title="Продукты MVP"
-              description="Стартовая линейка охватывает главные коммерческие и пользовательские сценарии."
+              title="Четыре продукта из локальной фотогалереи"
+              description="Линейка теперь полностью совпадает с четырьмя папками фотографий в каталоге products."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">

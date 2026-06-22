@@ -10,7 +10,7 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Проекты",
-  description: "Реализованные модульные проекты NORD FORM."
+  description: "Проектные сценарии NORD FORM для четырех контейнерных коллекций."
 };
 
 export default function ProjectsPage() {
@@ -18,11 +18,11 @@ export default function ProjectsPage() {
     <>
       <HeroSection
         eyebrow="Проекты"
-        title="Реальные объекты, которые работают сильнее обещаний."
-        description="Проектные страницы показывают масштаб, материалы, сценарий и решение в окружении участка."
+        title="Проектные сценарии, построенные вокруг реальных фотографий."
+        description="Здесь видно масштаб, материалы, свет и назначение каждого контейнерного решения."
         image={{
-          src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современный архитектурный объект среди зелени"
+          src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
+          alt: "Садовый модуль с дровником и вечерней подсветкой"
         }}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
         secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
@@ -32,8 +32,8 @@ export default function ProjectsPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Галерея реализаций"
-              title="Проекты MVP"
-              description="Стартовый набор проектных историй показывает, как модульная архитектура выглядит на участке."
+              title="Четыре проектные истории"
+              description="Каждая история привязана к одной из актуальных коллекций и ее фотографиям."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 lg:grid-cols-2">

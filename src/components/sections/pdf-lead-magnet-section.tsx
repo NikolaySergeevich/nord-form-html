@@ -37,8 +37,8 @@ export function PdfLeadMagnetSection() {
             </div>
             <div className="relative min-h-[320px]">
               <Image
-                src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=85"
-                alt="Современный архитектурный интерьер"
+                src="/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-vnytri-pervyi-variant.webp"
+                alt="Интерьер цветочного модуля с растениями и теплой подсветкой"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

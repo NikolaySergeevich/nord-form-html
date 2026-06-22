@@ -1,24 +1,24 @@
 export const tokens = {
   colors: {
-    backgroundPrimary: "#F7F5F0",
-    backgroundSecondary: "#ECE8DF",
-    backgroundDark: "#191A18",
-    surfacePrimary: "#FFFFFF",
-    surfaceMuted: "#F1EEE7",
-    textPrimary: "#191A18",
-    textSecondary: "#5F625C",
+    backgroundPrimary: "#E9E2D6",
+    backgroundSecondary: "#D8D0C3",
+    backgroundDark: "#151714",
+    surfacePrimary: "#F6F1E8",
+    surfaceMuted: "#DED6C9",
+    textPrimary: "#171915",
+    textSecondary: "#55564D",
     textInverse: "#FFFFFF",
-    border: "#D8D2C6",
-    accentPrimary: "#2F3A32",
-    accentSecondary: "#A66F3F",
-    accentSoft: "#D8C4A8",
-    success: "#2F6B4F",
-    error: "#B84A3A"
+    border: "#BDB2A3",
+    accentPrimary: "#242824",
+    accentSecondary: "#B9783E",
+    accentSoft: "#D7B57D",
+    success: "#4F6540",
+    error: "#A44E3F"
   },
   typography: {
     family: {
-      heading: "Inter",
-      body: "Inter"
+      heading: "System UI",
+      body: "System UI"
     },
     sizes: {
       xs: "12px",
@@ -54,9 +54,9 @@ export const tokens = {
     full: "999px"
   },
   shadows: {
-    sm: "0 2px 8px rgba(25, 26, 24, 0.08)",
-    md: "0 8px 24px rgba(25, 26, 24, 0.1)",
-    lg: "0 16px 48px rgba(25, 26, 24, 0.14)"
+    sm: "0 2px 8px rgba(21, 23, 20, 0.1)",
+    md: "0 8px 24px rgba(21, 23, 20, 0.14)",
+    lg: "0 16px 48px rgba(21, 23, 20, 0.18)"
   },
   breakpoints: {
     xs: "360px",

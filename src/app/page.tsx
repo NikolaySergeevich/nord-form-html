@@ -11,19 +11,19 @@ export default function HomePage() {
   return (
     <>
       <HeroSection
-        eyebrow="Modern Modular Architecture"
-        title="Модульные пространства, которые выглядят как архитектура."
-        description="NORD FORM создает премиальные модульные решения для отдыха, участка, хранения и бизнеса. Сайт ведет от вдохновения к каталогу, расчету и консультации."
+        eyebrow="Graphite modular architecture"
+        title="Контейнерные модули в графите, дереве и теплом свете."
+        description="NORD FORM создает садовые модули, хозяйственные хозблоки, SPA-бани и коммерческие павильоны на базе морских контейнеров."
         image={{
-          src: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=2000&q=85",
-          alt: "Современный модульный дом в лесу"
+          src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
+          alt: "Садовый модуль из графитового контейнера с дровником и теплой подсветкой"
         }}
         primaryCta={{ label: "Получить каталог", href: "/catalog" }}
         secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
         stats={[
-          { value: "4", label: "архитектурные коллекции" },
-          { value: "3", label: "ключевых CTA без перегруза" },
-          { value: "PDF", label: "каталог как первый шаг" }
+          { value: "4", label: "коллекции с фото" },
+          { value: "40 ft", label: "основа ключевых решений" },
+          { value: "PDF", label: "каталог для сравнения" }
         ]}
       />
       <PhilosophySection />
