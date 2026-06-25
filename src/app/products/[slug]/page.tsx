@@ -56,8 +56,8 @@ export default async function ProductPage({ params }: PageProps) {
         title={product.title}
         description={product.description}
         image={product.heroImage}
-        primaryCta={{ label: "Получить расчет", href: "#calculation" }}
-        secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
+        primaryCta={{ label: "Рассчитать модуль", href: "#calculation" }}
+        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
         stats={[
           { value: product.area ?? "по задаче", label: "площадь" },
           { value: product.dimensions ?? "адаптивно", label: "габариты" },
@@ -70,7 +70,7 @@ export default async function ProductPage({ params }: PageProps) {
             <Reveal>
               <SectionHeader
                 eyebrow="Характеристики"
-                title="Продукт раскрывается через сценарий, инженерную логику и материалы."
+                title="Готовая основа, которую можно адаптировать под ваш сценарий."
                 description={product.summary}
               />
             </Reveal>
@@ -92,8 +92,8 @@ export default async function ProductPage({ params }: PageProps) {
           <Reveal>
             <SectionHeader
               eyebrow="Галерея"
-              title="Фотографии держат главный фокус страницы."
-              description="Изображения показывают настроение, масштаб, материалы и то, почему модуль воспринимается как архитектура."
+              title="Пространство, материалы и детали в разных ракурсах."
+              description="Галерея помогает оценить пропорции, внутреннюю организацию и характер объекта до обсуждения индивидуальной комплектации."
             />
           </Reveal>
           <div className="mt-12">
@@ -107,8 +107,8 @@ export default async function ProductPage({ params }: PageProps) {
             <Reveal>
               <SectionHeader
                 eyebrow="Расчет"
-                title="Получите расчет под ваш участок и сценарий."
-                description="Оставьте контакты и выберите объект. Мы уточним детали и подготовим следующий шаг."
+                title="Получите предварительную оценку под вашу задачу."
+                description="Укажите назначение, место установки и желаемый размер. Мы уточним комплектацию и объясним, из чего будет складываться решение."
               />
             </Reveal>
             <Reveal delay={0.08}>
@@ -125,8 +125,8 @@ export default async function ProductPage({ params }: PageProps) {
             <Reveal>
               <SectionHeader
                 eyebrow="Проекты"
-                title="Реализации с этим продуктом"
-                description="Проектные страницы помогают увидеть, как решение работает в реальном окружении."
+                title="Проектные сценарии на основе этого решения"
+                description="Посмотрите, какую задачу решал модуль, как была организована конструкция и какой результат получил владелец."
               />
             </Reveal>
             <div className="mt-12 grid gap-5 lg:grid-cols-2">

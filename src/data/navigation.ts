@@ -4,27 +4,27 @@ export const navigation: NavigationItem[] = [
   {
     label: "Коллекции",
     href: "/collections",
-    description: "Садовый модуль, хозблок, SPA-баня и цветочный павильон"
+    description: "Готовые направления для участка, отдыха и бизнеса"
   },
   {
     label: "Проекты",
     href: "/projects",
-    description: "Модульные объекты в графите, дереве и теплом свете"
+    description: "Задачи, решения и практический результат"
   },
   {
     label: "Производство",
     href: "/production",
-    description: "Материалы, сборка и контроль качества"
+    description: "Конструкция, инженерия, сборка и установка"
   },
   {
     label: "Блог",
     href: "/blog",
-    description: "Идеи, выбор решений и архитектурные сценарии"
+    description: "Практические материалы о модульной архитектуре"
   },
   {
     label: "Контакты",
     href: "/contacts",
-    description: "Консультация и расчет проекта"
+    description: "Обсуждение задачи и предварительная оценка"
   }
 ];
 

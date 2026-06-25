@@ -52,8 +52,8 @@ export default async function ProjectPage({ params }: PageProps) {
         title={project.title}
         description={project.summary}
         image={project.heroImage}
-        primaryCta={{ label: "Хочу похожий проект", href: "/contacts" }}
-        secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
+        primaryCta={{ label: "Обсудить похожую задачу", href: "/contacts" }}
+        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
         stats={project.specs.map((spec) => ({
           value: spec.value,
           label: spec.label
@@ -66,14 +66,14 @@ export default async function ProjectPage({ params }: PageProps) {
               <SectionHeader
                 eyebrow="Задача"
                 title={project.challenge ?? "Сформировать архитектурный сценарий без визуального компромисса."}
-                description="Проект начинается с назначения объекта, окружения и того ощущения, которое он должен создавать на участке."
+                description="Сначала фиксируем практическую потребность, условия участка и ограничения, которые должны учитывать планировка и конструкция."
               />
             </Reveal>
             <Reveal delay={0.08}>
               <SectionHeader
                 eyebrow="Решение"
                 title={project.solution ?? "Подобрать модуль, материалы и фасадную композицию под задачу."}
-                description="Решение фиксирует форму, планировку, фотографии, материалы и следующий шаг к расчету."
+                description="Затем связываем пространство, инженерные узлы и фасад. Результат должен быть удобным в эксплуатации и цельным визуально."
               />
             </Reveal>
           </div>
@@ -83,9 +83,9 @@ export default async function ProjectPage({ params }: PageProps) {
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Фото"
-              title="Галерея проекта"
-              description="Крупные фотографии помогают оценить масштаб, пропорции и настроение объекта."
+              eyebrow="Результат"
+              title="Как решение выглядит и работает в пространстве."
+              description="Ракурсы показывают пропорции, организацию внутренних зон и архитектурный характер готового объекта."
             />
           </Reveal>
           <div className="mt-12">

@@ -55,8 +55,8 @@ export default async function CollectionPage({ params }: PageProps) {
         title={collection.title}
         description={collection.description}
         image={collection.heroImage}
-        primaryCta={{ label: "Скачать PDF", href: "/catalog" }}
-        secondaryCta={{ label: "Получить консультацию", href: "/contacts" }}
+        primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
       />
       <section className="bg-background-primary py-24">
         <Container>
@@ -64,7 +64,7 @@ export default async function CollectionPage({ params }: PageProps) {
             <Reveal>
               <SectionHeader
                 eyebrow={collection.subtitle}
-                title="Сценарии использования"
+                title="Для каких задач подходит коллекция"
                 description={collection.summary}
               />
             </Reveal>
@@ -86,8 +86,8 @@ export default async function CollectionPage({ params }: PageProps) {
           <Reveal>
             <SectionHeader
               eyebrow="Продукты"
-              title="Решения внутри коллекции"
-              description="Выберите продукт и перейдите к характеристикам, галерее и расчету."
+              title="Готовая конфигурация коллекции"
+              description="Изучите назначение, внутреннюю организацию, материалы и возможности инженерной комплектации."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

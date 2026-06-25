@@ -41,19 +41,19 @@ export function HeroSection({
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-[0.88]"
+        className="object-cover opacity-[0.82]"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background-dark/10 via-background-dark/24 to-background-dark/84" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background-dark/18 via-background-dark/34 to-background-dark/92" />
       <Container className="relative flex min-h-[calc(100vh-5rem)] items-end pb-14 pt-28">
         <div className="grid w-full gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="max-w-5xl">
             {eyebrow ? (
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-text-inverse/70">
+              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
                 {eyebrow}
               </p>
             ) : null}
             <h1 className="max-w-5xl text-balance">{title}</h1>
-            <p className="mt-6 max-w-2xl text-lg text-text-inverse/78">{description}</p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-text-inverse/75">{description}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               {primaryCta ? (
                 <Button asChild size="lg" variant="inverse">
@@ -61,18 +61,18 @@ export function HeroSection({
                 </Button>
               ) : null}
               {secondaryCta ? (
-                <Button asChild size="lg" variant="ghost" className="text-text-inverse hover:bg-white/10">
+                <Button asChild size="lg" variant="ghost" className="border border-text-inverse/30 text-text-inverse hover:border-accent-soft hover:bg-accent-soft/10 hover:text-accent-soft">
                   <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
                 </Button>
               ) : null}
             </div>
           </div>
           {stats?.length ? (
-            <div className="grid gap-3 rounded-md border border-white/16 bg-white/10 p-5 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-1">
+            <div className="grid gap-4 rounded-md border border-text-inverse/18 bg-background-dark/35 p-6 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-1">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl font-semibold">{stat.value}</p>
-                  <p className="mt-1 text-sm text-text-inverse/65">{stat.label}</p>
+                  <p className="font-display text-3xl font-medium tracking-[-0.03em]">{stat.value}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.08em] text-text-inverse/60">{stat.label}</p>
                 </div>
               ))}
             </div>

@@ -9,12 +9,12 @@ export const blogCategories = [
   {
     slug: "spa",
     title: "SPA и баня",
-    description: "Материалы о контейнерных банях, парных, душевых и технических нишах."
+    description: "Планировка парной, моечной, комнаты отдыха и инженерной зоны в модульной бане."
   },
   {
     slug: "business",
     title: "Для бизнеса",
-    description: "Модульные павильоны, витрины, цветочные магазины и быстрый запуск retail-точек."
+    description: "Модульные павильоны, витрины, рабочие процессы и инженерия коммерческих пространств."
   },
   {
     slug: "architecture",
@@ -27,7 +27,7 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "modern-sauna",
     slug: "modern-sauna",
-    title: "Контейнерная баня: как разложить зоны по длине",
+    title: "Модульная баня: как выстроить зоны по длине",
     excerpt:
       "Комната отдыха, моечная, парная и техническая ниша работают лучше, когда движение внутри бани выстроено последовательно.",
     category: "spa",
@@ -50,9 +50,9 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "storage-ideas",
     slug: "storage-ideas",
-    title: "Как организовать хранение на участке без времянок",
+    title: "Как организовать хранение на участке без временных построек",
     excerpt:
-      "Хозблок может быть архитектурным объектом: с графитовым фасадом, дровником, светом и понятным хранением внутри.",
+      "Продуманный хозяйственный модуль объединяет технику, инструмент и дрова, сохраняя визуальный порядок участка.",
     category: "uchastok",
     coverImage: {
       src: "/images/products/hozyistvennyi-module/hozblok-vid-vnytri.webp",
@@ -75,7 +75,7 @@ export const blogArticles: BlogArticle[] = [
     slug: "flower-shop",
     title: "Как открыть цветочный магазин в модульном формате",
     excerpt:
-      "Что важно продумать до запуска: витрина, свет, поток клиентов, рабочая зона, хранение и внешний образ точки.",
+      "Что предусмотреть до производства: витрину, поток клиентов, рабочую зону, хранение, климат и внешний образ точки.",
     category: "business",
     coverImage: {
       src: "/images/products/workshop-flowers-module/cvetochnyi-magazin-vid-cnaruzhi.webp",
@@ -96,9 +96,9 @@ export const blogArticles: BlogArticle[] = [
   {
     id: "graphite-and-wood",
     slug: "graphite-and-wood",
-    title: "Графит, дерево и теплый свет: почему сочетание работает",
+    title: "Графит, дерево и тёплый свет: почему сочетание работает",
     excerpt:
-      "Темный контейнер, вертикальные деревянные рейки и янтарная подсветка превращают технический объект в часть ландшафта.",
+      "Тёмный металл, вертикальные деревянные рейки и мягкая подсветка связывают индустриальную основу с архитектурой участка.",
     category: "architecture",
     coverImage: {
       src: "/images/products/garden-module/sadovyi-modul-s-boky.webp",

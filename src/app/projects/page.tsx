@@ -18,22 +18,22 @@ export default function ProjectsPage() {
     <>
       <HeroSection
         eyebrow="Проекты"
-        title="Проектные сценарии, построенные вокруг реальных фотографий."
-        description="Здесь видно масштаб, материалы, свет и назначение каждого контейнерного решения."
+        title="Проекты, в которых практическая задача получает архитектурную форму."
+        description="Показываем исходную задачу, логику решения и результат — от порядка на участке до полноценного пространства для бизнеса."
         image={{
           src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
           alt: "Садовый модуль с дровником и вечерней подсветкой"
         }}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
-        secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
+        secondaryCta={{ label: "Смотреть решения", href: "/collections" }}
       />
       <section className="bg-background-primary py-24">
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Галерея реализаций"
-              title="Четыре проектные истории"
-              description="Каждая история привязана к одной из актуальных коллекций и ее фотографиям."
+              eyebrow="Проектные истории"
+              title="Разные задачи. Единый подход к конструкции и внешнему образу."
+              description="В каждом проекте назначение, планировка, инженерия и фасад работают как одно решение."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 lg:grid-cols-2">

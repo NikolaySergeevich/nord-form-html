@@ -38,7 +38,7 @@ export function CatalogForm() {
   if (isSent) {
     return (
       <div className="rounded-md bg-surface-muted p-5 text-sm text-text-secondary">
-        Спасибо. Мы подготовим каталог и свяжемся с вами для уточнения задачи.
+        Спасибо. Мы отправим каталог и при необходимости поможем подобрать решение под вашу задачу.
       </div>
     );
   }

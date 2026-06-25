@@ -18,22 +18,22 @@ export default function ProductsPage() {
     <>
       <HeroSection
         eyebrow="Продукты"
-        title="Контейнерные решения с готовой архитектурной логикой."
-        description="Каждый продукт опирается на конкретный сценарий: дровник и гараж, хозяйственное хранение, баня или коммерческая витрина."
+        title="Модульные решения, в которых функция сразу становится архитектурой."
+        description="Выберите готовое направление для участка, отдыха или бизнеса. Планировку, фасад и инженерную комплектацию можно адаптировать под конкретную задачу."
         image={{
           src: "/images/products/spa-bath-bany/spa-bany-s-fronta.webp",
           alt: "SPA-баня из графитового контейнера с теплой подсветкой"
         }}
-        primaryCta={{ label: "Получить расчет", href: "/contacts" }}
-        secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
+        primaryCta={{ label: "Подобрать решение", href: "/contacts" }}
+        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
       />
       <section className="bg-background-primary py-24">
         <Container>
           <Reveal>
             <SectionHeader
               eyebrow="Линейка"
-              title="Четыре продукта из локальной фотогалереи"
-              description="Линейка теперь полностью совпадает с четырьмя папками фотографий в каталоге products."
+              title="Четыре готовых направления для разных сценариев."
+              description="От организованного хранения и приватной SPA-зоны до коммерческого пространства с витриной и собственной инженерией."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">

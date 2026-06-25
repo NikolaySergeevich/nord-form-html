@@ -39,7 +39,7 @@ export function ConsultationForm() {
   if (isSent) {
     return (
       <div className="rounded-md bg-surface-muted p-5 text-sm text-text-secondary">
-        Заявка принята. Мы свяжемся с вами и предложим ближайшее окно для консультации.
+        Спасибо. Мы свяжемся с вами, уточним задачу и предложим следующий шаг.
       </div>
     );
   }
@@ -54,9 +54,9 @@ export function ConsultationForm() {
         <Input placeholder="Телефон" {...register("phone")} />
         {errors.phone ? <p className="mt-2 text-sm text-error">{errors.phone.message}</p> : null}
       </div>
-      <Textarea placeholder="Комментарий" {...register("comment")} />
+      <Textarea placeholder="Что хотите разместить в модуле и где планируется установка?" {...register("comment")} />
       <Button type="submit" size="lg" disabled={isSubmitting}>
-        Получить консультацию
+        Обсудить проект
       </Button>
     </form>
   );

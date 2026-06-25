@@ -7,10 +7,10 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader } from "@/components/ui/section-header";
 
 const steps = [
-  "Фиксируем сценарий и ограничения участка",
-  "Подбираем планировку, материалы и инженерную комплектацию",
-  "Собираем модуль в контролируемом производственном процессе",
-  "Готовим доставку, основание и монтаж на участке"
+  "Уточняем назначение, участок и условия эксплуатации",
+  "Согласовываем планировку, фасад и инженерную комплектацию",
+  "Готовим конструкцию и собираем модуль на производстве",
+  "Планируем доставку, основание и установку на участке"
 ];
 
 export function ProductionSection() {
@@ -32,8 +32,8 @@ export function ProductionSection() {
           <Reveal delay={0.1}>
             <SectionHeader
               eyebrow="Производство"
-              title="Контроль процесса важен так же, как внешний вид."
-              description="Модульный формат позволяет заранее продумать конструкцию, инженерные узлы, фасад и монтажную логику."
+              title="Внешний вид начинается с точной инженерной подготовки."
+              description="До производства мы связываем конструкцию, утепление, электрику, вентиляцию и отделку в одно решение. Это снижает количество импровизации на участке и делает результат предсказуемым."
               className="text-text-inverse [&_h2]:text-text-inverse [&_p]:text-text-inverse/70"
             />
             <ol className="mt-10 grid gap-4">
@@ -45,7 +45,7 @@ export function ProductionSection() {
               ))}
             </ol>
             <Button asChild variant="inverse" className="mt-9">
-              <Link href="/production">Смотреть производство</Link>
+              <Link href="/production">Как мы работаем</Link>
             </Button>
           </Reveal>
         </div>

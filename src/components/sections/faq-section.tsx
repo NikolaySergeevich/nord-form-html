@@ -22,12 +22,12 @@ export function FAQSection({ items = defaultFaq }: FAQSectionProps) {
           <Reveal>
             <SectionHeader
               eyebrow="FAQ"
-              title="Вопросы, которые помогают принять решение."
-              description="Коротко отвечаем на то, что обычно важно до консультации и расчета."
+              title="Что важно знать до выбора модуля."
+              description="Отвечаем о конструкции, зимней эксплуатации, комплектации, доставке и возможностях индивидуальной адаптации."
             />
           </Reveal>
           <Reveal delay={0.08}>
-            <Accordion type="single" collapsible className="rounded-md border border-border bg-surface-primary px-6">
+            <Accordion type="single" collapsible className="rounded-md border border-border/80 bg-surface-primary px-6 shadow-sm">
               {items.map((item) => (
                 <AccordionItem key={item.id} value={item.id}>
                   <AccordionTrigger>{item.question}</AccordionTrigger>

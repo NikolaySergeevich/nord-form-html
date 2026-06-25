@@ -15,14 +15,14 @@ export default function NotFound() {
             Страница не найдена
           </h1>
           <p className="mt-4 text-text-secondary">
-            Возможно, страница была перемещена. Вернитесь к коллекциям или каталогу.
+            Возможно, адрес изменился. Перейдите к готовым решениям или получите каталог.
           </p>
           <div className="mt-8 flex justify-center gap-3">
             <Button asChild>
-              <Link href="/collections">Коллекции</Link>
+              <Link href="/collections">Смотреть решения</Link>
             </Button>
             <Button asChild variant="secondary">
-              <Link href="/catalog">Каталог</Link>
+              <Link href="/catalog">Получить каталог</Link>
             </Button>
           </div>
         </div>

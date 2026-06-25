@@ -12,8 +12,8 @@ export function ContactSection() {
           <Reveal>
             <SectionHeader
               eyebrow="Контакт"
-              title="Начните с консультации, если пока рано говорить о точном расчете."
-              description="Мы уточним назначение объекта, участок, сроки и подскажем, какая коллекция ближе к вашей задаче."
+              title="Начните с задачи — готовое техническое задание не требуется."
+              description="Расскажите о назначении, участке и желаемом размере. Мы подскажем подходящий формат и объясним, какие решения стоит заложить в комплектацию."
             />
             <div className="mt-8 grid gap-3 text-text-secondary">
               <p>{siteConfig.phone}</p>
@@ -22,7 +22,7 @@ export function ContactSection() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="rounded-md border border-border bg-surface-primary p-6 shadow-sm">
+            <div className="rounded-md border border-border/80 bg-surface-primary p-6 shadow-sm">
               <ConsultationForm />
             </div>
           </Reveal>
