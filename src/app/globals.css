@@ -38,7 +38,10 @@ html {
 
 body {
   min-height: 100vh;
-  background: hsl(var(--background-primary));
+  background:
+    radial-gradient(circle at 12% 8%, hsl(var(--accent-soft) / 0.08), transparent 32rem),
+    radial-gradient(circle at 88% 38%, hsl(var(--accent-secondary) / 0.045), transparent 36rem),
+    hsl(var(--background-primary));
   color: hsl(var(--text-primary));
   font-family: var(--font-manrope), system-ui, sans-serif;
   font-size: 1rem;
@@ -57,6 +60,39 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+main > section,
+main > article,
+main > div > section {
+  position: relative;
+}
+
+main > section + section::before,
+main > article + section::before,
+main > div + section::before {
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: min(92%, 1440px);
+  height: 1px;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--border) / 0.42) 18%,
+    hsl(var(--border) / 0.42) 82%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -115,5 +151,41 @@ img {
       rgba(24, 26, 27, 0.04) 0%,
       rgba(24, 26, 27, 0.78) 100%
     );
+  }
+
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::before {
+    position: absolute;
+    inset: 0 auto auto 50%;
+    width: min(92%, 1440px);
+    height: 1px;
+    content: "";
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--border) / 0.55) 18%,
+      hsl(var(--border) / 0.55) 82%,
+      transparent
+    );
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

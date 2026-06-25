@@ -19,10 +19,10 @@ export function Modal({ trigger, title, description, children, className }: Moda
     <Dialog.Root>
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-background-dark/72 backdrop-blur-sm" />
+        <Dialog.Overlay className="fixed inset-0 z-50 animate-dialog-overlay-in bg-background-dark/72 backdrop-blur-sm" />
         <Dialog.Content
           className={cn(
-            "fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-[calc(100%-2rem)] max-w-xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-lg border border-border/80 bg-surface-elevated p-6 shadow-lg",
+            "fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-[calc(100%-2rem)] max-w-xl -translate-x-1/2 -translate-y-1/2 animate-dialog-content-in overflow-y-auto rounded-lg border border-border/80 bg-surface-elevated p-6 shadow-lg",
             className
           )}
         >
@@ -38,7 +38,7 @@ export function Modal({ trigger, title, description, children, className }: Moda
           </div>
           {children}
           <Dialog.Close className="absolute right-4 top-4 rounded-sm p-2 text-text-secondary transition-colors duration-300 hover:bg-accent-soft/25 hover:text-accent-secondary">
-            <X className="h-5 w-5" aria-hidden="true" />
+            <X className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
             <span className="sr-only">Закрыть</span>
           </Dialog.Close>
         </Dialog.Content>

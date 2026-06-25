@@ -24,6 +24,7 @@ export function TrustList({ items, className, inverse = false }: TrustListProps)
               "mt-1 h-3.5 w-3.5 shrink-0",
               inverse ? "text-accent-soft" : "text-accent-secondary"
             )}
+            strokeWidth={1.75}
             aria-hidden="true"
           />
           <span>{item}</span>

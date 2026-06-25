@@ -23,7 +23,11 @@ export function FormSubmitButton({
     >
       {isSubmitting ? (
         <>
-          <LoaderCircle className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+          <LoaderCircle
+            className="mr-2 h-4 w-4 animate-spin"
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
           {loadingLabel}
         </>
       ) : (

@@ -77,7 +77,11 @@ export function HeroSection({
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-text-inverse/70 sm:mt-6">
                 {trustPoints.map((point) => (
                   <li key={point} className="flex items-center gap-1.5">
-                    <Check className="h-3.5 w-3.5 text-accent-soft" aria-hidden="true" />
+                    <Check
+                      className="h-3.5 w-3.5 text-accent-soft"
+                      strokeWidth={1.75}
+                      aria-hidden="true"
+                    />
                     {point}
                   </li>
                 ))}
