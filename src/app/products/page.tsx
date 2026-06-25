@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { ProductCard } from "@/components/cards/product-card";
 import { HeroSection } from "@/components/sections/hero-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -24,8 +25,8 @@ export default function ProductsPage() {
           src: "/images/products/spa-bath-bany/spa-bany-s-fronta.webp",
           alt: "SPA-баня из графитового контейнера с теплой подсветкой"
         }}
-        primaryCta={{ label: "Подобрать решение", href: "/contacts" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
       <section className="bg-background-primary py-24">
         <Container>
@@ -46,6 +47,7 @@ export default function ProductsPage() {
         </Container>
       </section>
       <PdfLeadMagnetSection />
+      <FinalCtaSection />
     </>
   );
 }

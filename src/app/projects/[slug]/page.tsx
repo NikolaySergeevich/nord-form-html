@@ -52,8 +52,8 @@ export default async function ProjectPage({ params }: PageProps) {
         title={project.title}
         description={project.summary}
         image={project.heroImage}
-        primaryCta={{ label: "Обсудить похожую задачу", href: "/contacts" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
         stats={project.specs.map((spec) => ({
           value: spec.value,
           label: spec.label

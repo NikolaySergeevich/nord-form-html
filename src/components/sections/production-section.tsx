@@ -5,13 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeader } from "@/components/ui/section-header";
-
-const steps = [
-  "Уточняем назначение, участок и условия эксплуатации",
-  "Согласовываем планировку, фасад и инженерную комплектацию",
-  "Готовим конструкцию и собираем модуль на производстве",
-  "Планируем доставку, основание и установку на участке"
-];
+import { processSteps } from "@/data/process";
 
 export function ProductionSection() {
   return (
@@ -31,16 +25,23 @@ export function ProductionSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <SectionHeader
-              eyebrow="Производство"
-              title="Внешний вид начинается с точной инженерной подготовки."
-              description="До производства мы связываем конструкцию, утепление, электрику, вентиляцию и отделку в одно решение. Это снижает количество импровизации на участке и делает результат предсказуемым."
+              eyebrow="Как мы работаем"
+              title="Весь путь проекта понятен ещё до начала производства."
+              description="Каждый этап заканчивается конкретным результатом: согласованной задачей, концепцией, проектными решениями или подготовкой к следующему шагу."
               className="text-text-inverse [&_h2]:text-text-inverse [&_p]:text-text-inverse/70"
             />
             <ol className="mt-10 grid gap-4">
-              {steps.map((step, index) => (
-                <li key={step} className="flex gap-4 border-t border-white/12 pt-4">
+              {processSteps.map((step, index) => (
+                <li key={step.title} className="grid grid-cols-[2rem_1fr] gap-3 border-t border-white/12 pt-4">
                   <span className="text-sm text-text-inverse/45">0{index + 1}</span>
-                  <span className="text-text-inverse/82">{step}</span>
+                  <div>
+                    <h3 className="font-sans text-base font-semibold tracking-normal text-text-inverse">
+                      {step.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-6 text-text-inverse/65">
+                      {step.description}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ol>

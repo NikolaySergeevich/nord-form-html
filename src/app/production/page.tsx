@@ -32,7 +32,7 @@ export default function ProductionPage() {
           alt: "Внутреннее хранение и материалы хозяйственного модуля"
         }}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
       <ProductionSection />
       <section className="bg-background-primary py-24">

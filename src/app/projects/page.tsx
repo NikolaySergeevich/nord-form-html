@@ -25,7 +25,7 @@ export default function ProjectsPage() {
           alt: "Садовый модуль с дровником и вечерней подсветкой"
         }}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
-        secondaryCta={{ label: "Смотреть решения", href: "/collections" }}
+        secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
       />
       <section className="bg-background-primary py-24">
         <Container>

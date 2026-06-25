@@ -19,7 +19,7 @@ export default function HomePage() {
           alt: "Садовый модуль из графитового контейнера с дровником и теплой подсветкой"
         }}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
-        secondaryCta={{ label: "Смотреть решения", href: "/collections" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
         stats={[
           { value: "4", label: "готовых направления" },
           { value: "40 ft", label: "основа ключевых модулей" },

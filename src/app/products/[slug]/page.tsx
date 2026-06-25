@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/cards/project-card";
 import { CalculationForm } from "@/components/forms/calculation-form";
 import { ImageGallery } from "@/components/gallery/image-gallery";
 import { FAQSection } from "@/components/sections/faq-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Container } from "@/components/ui/container";
@@ -56,8 +57,8 @@ export default async function ProductPage({ params }: PageProps) {
         title={product.title}
         description={product.description}
         image={product.heroImage}
-        primaryCta={{ label: "Рассчитать модуль", href: "#calculation" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        primaryCta={{ label: "Получить предварительную оценку", href: "#calculation" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
         stats={[
           { value: product.area ?? "по задаче", label: "площадь" },
           { value: product.dimensions ?? "адаптивно", label: "габариты" },
@@ -141,6 +142,9 @@ export default async function ProductPage({ params }: PageProps) {
       ) : null}
       <FAQSection items={product.faq} />
       <PdfLeadMagnetSection />
+      <FinalCtaSection
+        title={`Обсудите, как адаптировать «${product.title}» под ваш участок и сценарий.`}
+      />
     </>
   );
 }

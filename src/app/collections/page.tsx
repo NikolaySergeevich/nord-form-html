@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { CollectionCard } from "@/components/cards/collection-card";
 import { HeroSection } from "@/components/sections/hero-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -24,8 +25,8 @@ export default function CollectionsPage() {
           src: "/images/products/hozyistvennyi-module/hozblok-obshiy-vid.webp",
           alt: "Хозяйственный модуль из графитового контейнера с деревянными рейками"
         }}
-        primaryCta={{ label: "Смотреть решения", href: "#collections" }}
-        secondaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
       <section id="collections" className="bg-background-primary py-24">
         <Container>
@@ -46,6 +47,7 @@ export default function CollectionsPage() {
         </Container>
       </section>
       <PdfLeadMagnetSection />
+      <FinalCtaSection />
     </>
   );
 }
