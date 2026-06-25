@@ -13,14 +13,14 @@ export default function ContactsPage() {
     <>
       <HeroSection
         eyebrow="Контакты"
-        title="Расскажите, какой объект нужен вашему участку или бизнесу."
-        description="Мы поможем выбрать одну из четырех коллекций, уточнить сценарий и перейти к расчету без лишней суеты."
+        title="Расскажите о задаче — мы поможем собрать подходящий модуль."
+        description="На первом этапе достаточно знать назначение, место установки и примерный размер. Остальные решения разберём вместе и подготовим предварительную оценку."
         image={{
           src: "/images/products/garden-module/sadovyi-modul-s-boky.webp",
           alt: "Боковой вид садового модуля из графитового контейнера"
         }}
-        primaryCta={{ label: "Оставить заявку", href: "#contact-form" }}
-        secondaryCta={{ label: "Скачать каталог", href: "/catalog" }}
+        primaryCta={{ label: "Обсудить проект", href: "#contact-form" }}
+        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
       />
       <div id="contact-form">
         <ContactSection />

@@ -48,8 +48,8 @@ const config: Config = {
         focus: "hsl(var(--focus) / <alpha-value>)"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-inter)", "system-ui", "sans-serif"]
+        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        display: ["var(--font-inter-tight)", "var(--font-manrope)", "system-ui", "sans-serif"]
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],

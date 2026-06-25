@@ -11,19 +11,19 @@ export default function HomePage() {
   return (
     <>
       <HeroSection
-        eyebrow="Graphite modular architecture"
-        title="Контейнерные модули в графите, дереве и теплом свете."
-        description="NORD FORM создает садовые модули, хозяйственные хозблоки, SPA-бани и коммерческие павильоны на базе морских контейнеров."
+        eyebrow="Модульная архитектура из морских контейнеров"
+        title="Современные модульные здания для участка, бизнеса и жизни."
+        description="Проектируем архитектурные модули с долговечной металлической основой, продуманной инженерией и выразительным сочетанием графита, дерева и тёплого света."
         image={{
           src: "/images/products/garden-module/sadovyi-modul-s-peredi.webp",
           alt: "Садовый модуль из графитового контейнера с дровником и теплой подсветкой"
         }}
-        primaryCta={{ label: "Получить каталог", href: "/catalog" }}
-        secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
+        primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
+        secondaryCta={{ label: "Смотреть решения", href: "/collections" }}
         stats={[
-          { value: "4", label: "коллекции с фото" },
-          { value: "40 ft", label: "основа ключевых решений" },
-          { value: "PDF", label: "каталог для сравнения" }
+          { value: "4", label: "готовых направления" },
+          { value: "40 ft", label: "основа ключевых модулей" },
+          { value: "Под задачу", label: "инженерия и комплектация" }
         ]}
       />
       <PhilosophySection />

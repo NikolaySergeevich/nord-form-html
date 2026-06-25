@@ -16,9 +16,9 @@ export function FeaturedProjectSection() {
         <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <Reveal>
             <SectionHeader
-              eyebrow="Реализация"
-              title="Проекты показывают масштаб, материалы и вечернее ощущение объекта."
-              description="Сайт строится вокруг крупных фотографий контейнерных модулей: графитовый металл, дерево, свет и понятный сценарий."
+              eyebrow="Проекты"
+              title="Каждый проект начинается с практической задачи и заканчивается цельным архитектурным объектом."
+              description="Показываем, как объединяем назначение, планировку, конструкцию и фасад — без ощущения временной постройки."
             />
           </Reveal>
           <Button asChild variant="secondary">

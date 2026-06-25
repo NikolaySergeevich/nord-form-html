@@ -16,7 +16,7 @@ export function Navigation({ className, onNavigate }: NavigationProps) {
           key={item.href}
           href={item.href}
           onClick={onNavigate}
-          className="text-sm font-medium text-text-primary/80 transition hover:text-text-primary"
+          className="text-[0.8125rem] font-semibold uppercase tracking-[0.08em] text-text-primary/70 transition-colors duration-300 hover:text-accent-secondary"
         >
           {item.label}
         </Link>

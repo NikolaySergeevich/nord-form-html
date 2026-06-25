@@ -18,22 +18,22 @@ export default function CollectionsPage() {
     <>
       <HeroSection
         eyebrow="Коллекции"
-        title="Четыре коллекции, под которые уже есть реальные визуальные сценарии."
-        description="Садовый модуль, хозяйственный хозблок, SPA-баня и цветочный павильон собраны в единой палитре графита, дерева и теплой подсветки."
+        title="Четыре архитектурных направления для участка, отдыха и бизнеса."
+        description="Каждая коллекция решает понятную задачу и служит отправной точкой: конфигурацию, материалы и инженерные системы можно адаптировать."
         image={{
           src: "/images/products/hozyistvennyi-module/hozblok-obshiy-vid.webp",
           alt: "Хозяйственный модуль из графитового контейнера с деревянными рейками"
         }}
-        primaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        primaryCta={{ label: "Смотреть решения", href: "#collections" }}
         secondaryCta={{ label: "Обсудить проект", href: "/contacts" }}
       />
-      <section className="bg-background-primary py-24">
+      <section id="collections" className="bg-background-primary py-24">
         <Container>
           <Reveal>
             <SectionHeader
               eyebrow="Направления"
-              title="Каждая коллекция отвечает на отдельную задачу участка или бизнеса."
-              description="Все карточки используют локальные фотографии из продуктовых папок, поэтому визуальный ряд остается цельным."
+              title="Выберите назначение — детали соберём под ваш сценарий."
+              description="Коллекции задают логику пространства и внешний образ. На консультации мы уточняем размер, сезонность, инженерную часть и условия установки."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">

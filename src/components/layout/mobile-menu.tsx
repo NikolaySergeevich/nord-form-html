@@ -23,14 +23,14 @@ export function MobileMenu() {
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
       {isOpen ? (
-        <div className="absolute inset-x-4 top-20 z-40 rounded-md border border-border bg-surface-primary p-5 shadow-lg">
+        <div className="absolute inset-x-4 top-20 z-40 rounded-md border border-border/80 bg-surface-elevated p-6 shadow-lg">
           <Navigation
             className="grid gap-4"
             onNavigate={() => setIsOpen(false)}
           />
           <Button asChild className="mt-5 w-full">
-            <Link href="/catalog" onClick={() => setIsOpen(false)}>
-              Получить каталог
+            <Link href="/contacts" onClick={() => setIsOpen(false)}>
+              Обсудить проект
             </Link>
           </Button>
         </div>

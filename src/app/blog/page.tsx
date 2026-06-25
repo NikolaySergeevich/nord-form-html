@@ -18,22 +18,22 @@ export default function BlogPage() {
     <>
       <HeroSection
         eyebrow="Блог"
-        title="Статьи, которые помогают выбрать контейнерное решение."
-        description="Блог объясняет планировку, хранение, фасады, витрины и следующий осознанный шаг перед расчетом."
+        title="Практические материалы о модульной архитектуре."
+        description="Разбираем планировки, инженерные решения, хранение, фасады и коммерческие сценарии — спокойно и по существу."
         image={{
           src: "/images/products/spa-bath-bany/spa-bany-s-zadi-drova.webp",
           alt: "SPA-баня из контейнера с дровником и теплой подсветкой"
         }}
-        primaryCta={{ label: "Получить каталог", href: "/catalog" }}
-        secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
+        primaryCta={{ label: "Смотреть материалы", href: "#articles" }}
+        secondaryCta={{ label: "Смотреть решения", href: "/collections" }}
       />
-      <section className="bg-background-primary py-24">
+      <section id="articles" className="bg-background-primary py-24">
         <Container>
           <Reveal>
             <SectionHeader
               eyebrow="Материалы"
-              title="Материалы по четырем коллекциям"
-              description="Каждая статья связана с продуктом, коллекцией или каталогом и использует тот же визуальный язык."
+              title="Ответы на вопросы, которые возникают до проектирования."
+              description="Как организовать пространство, выбрать конструктивные решения и понять, какой формат подойдёт вашему участку или бизнесу."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

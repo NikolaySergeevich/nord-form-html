@@ -47,7 +47,7 @@ export function CalculationForm({ defaultProductId = "" }: CalculationFormProps)
   if (isSent) {
     return (
       <div className="rounded-md bg-surface-muted p-5 text-sm text-text-secondary">
-        Спасибо. Мы подготовим расчетный сценарий и уточним детали проекта.
+        Спасибо. Мы уточним исходные данные и подготовим предварительную оценку решения.
       </div>
     );
   }
@@ -64,7 +64,7 @@ export function CalculationForm({ defaultProductId = "" }: CalculationFormProps)
       </div>
       <div>
         <Select {...register("product")}>
-          <option value="">Какой объект интересует</option>
+          <option value="">Какое решение рассматриваете</option>
           {products.map((product) => (
             <option key={product.id} value={product.id}>
               {product.title}
@@ -75,9 +75,9 @@ export function CalculationForm({ defaultProductId = "" }: CalculationFormProps)
           <p className="mt-2 text-sm text-error">{errors.product.message}</p>
         ) : null}
       </div>
-      <Textarea placeholder="Комментарий" {...register("comment")} />
+      <Textarea placeholder="Участок, назначение, желаемый размер и важные детали" {...register("comment")} />
       <Button type="submit" size="lg" disabled={isSubmitting}>
-        Получить расчет
+        Получить предварительную оценку
       </Button>
     </form>
   );

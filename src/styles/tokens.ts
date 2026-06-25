@@ -1,24 +1,24 @@
 export const tokens = {
   colors: {
-    backgroundPrimary: "#E9E2D6",
-    backgroundSecondary: "#D8D0C3",
-    backgroundDark: "#151714",
-    surfacePrimary: "#F6F1E8",
-    surfaceMuted: "#DED6C9",
-    textPrimary: "#171915",
-    textSecondary: "#55564D",
-    textInverse: "#FFFFFF",
-    border: "#BDB2A3",
-    accentPrimary: "#242824",
-    accentSecondary: "#B9783E",
-    accentSoft: "#D7B57D",
-    success: "#4F6540",
-    error: "#A44E3F"
+    backgroundPrimary: "#F2EFE8",
+    backgroundSecondary: "#E5E0D8",
+    backgroundDark: "#151719",
+    surfacePrimary: "#F9F7F2",
+    surfaceMuted: "#E0DCD5",
+    textPrimary: "#1C1F21",
+    textSecondary: "#6A655F",
+    textInverse: "#F8F4EC",
+    border: "#C7C0B6",
+    accentPrimary: "#25292B",
+    accentSecondary: "#98784D",
+    accentSoft: "#D0B88F",
+    success: "#56634C",
+    error: "#994F43"
   },
   typography: {
     family: {
-      heading: "System UI",
-      body: "System UI"
+      heading: "Inter Tight",
+      body: "Manrope"
     },
     sizes: {
       xs: "12px",
@@ -47,16 +47,16 @@ export const tokens = {
     24: "96px"
   },
   radius: {
-    sm: "4px",
-    md: "8px",
-    lg: "12px",
-    xl: "16px",
+    sm: "2px",
+    md: "4px",
+    lg: "6px",
+    xl: "8px",
     full: "999px"
   },
   shadows: {
-    sm: "0 2px 8px rgba(21, 23, 20, 0.1)",
-    md: "0 8px 24px rgba(21, 23, 20, 0.14)",
-    lg: "0 16px 48px rgba(21, 23, 20, 0.18)"
+    sm: "0 8px 24px rgba(24, 26, 27, 0.06)",
+    md: "0 18px 48px rgba(24, 26, 27, 0.1)",
+    lg: "0 32px 80px rgba(24, 26, 27, 0.14)"
   },
   breakpoints: {
     xs: "360px",

@@ -12,7 +12,7 @@ export function ImageGallery({ images }: { images: ImageAsset[] }) {
       {images.map((image, index) => (
         <div
           key={`${image.src}-${index}`}
-          className="relative aspect-[4/3] overflow-hidden rounded-md bg-surface-muted"
+          className="relative aspect-[4/3] overflow-hidden rounded-md border border-border/50 bg-surface-muted shadow-sm"
         >
           <Image
             src={image.src}

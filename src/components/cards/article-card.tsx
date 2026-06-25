@@ -7,7 +7,7 @@ export function ArticleCard({ article }: { article: BlogArticle }) {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group grid overflow-hidden rounded-md border border-border bg-surface-primary transition hover:-translate-y-1 hover:shadow-md"
+      className="group grid overflow-hidden rounded-md border border-border/80 bg-surface-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent-secondary/45 hover:shadow-md"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
@@ -15,15 +15,15 @@ export function ArticleCard({ article }: { article: BlogArticle }) {
           alt={article.coverImage.alt}
           fill
           sizes="(min-width: 1024px) 33vw, 100vw"
-          className="object-cover transition duration-700 group-hover:scale-105"
+          className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
         />
       </div>
-      <div className="p-5">
-        <p className="text-sm uppercase tracking-[0.18em] text-accent-secondary">
+      <div className="p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-secondary">
           {article.category}
         </p>
-        <h3 className="mt-3 text-2xl font-semibold text-text-primary">{article.title}</h3>
-        <p className="mt-3 text-sm text-text-secondary">{article.excerpt}</p>
+        <h3 className="mt-4 text-2xl font-medium text-text-primary transition-colors duration-300 group-hover:text-accent-secondary">{article.title}</h3>
+        <p className="mt-4 text-sm leading-7 text-text-secondary">{article.excerpt}</p>
       </div>
     </Link>
   );

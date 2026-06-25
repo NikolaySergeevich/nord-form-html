@@ -7,7 +7,7 @@ export function CollectionCard({ collection }: { collection: Collection }) {
   return (
     <Link
       href={`/collections/${collection.slug}`}
-      className="group block overflow-hidden rounded-md bg-surface-primary shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      className="group block overflow-hidden rounded-md border border-border/70 bg-surface-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent-secondary/45 hover:shadow-md"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -15,16 +15,16 @@ export function CollectionCard({ collection }: { collection: Collection }) {
           alt={collection.heroImage.alt}
           fill
           sizes="(min-width: 1024px) 25vw, 100vw"
-          className="object-cover transition duration-700 group-hover:scale-105"
+          className="object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
         />
         <div className="absolute inset-0 image-overlay" />
       </div>
-      <div className="p-5">
-        <p className="text-sm uppercase tracking-[0.18em] text-accent-secondary">
+      <div className="p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-secondary">
           Коллекция
         </p>
-        <h3 className="mt-3 text-2xl font-semibold text-text-primary">{collection.title}</h3>
-        <p className="mt-3 text-sm text-text-secondary">{collection.summary}</p>
+        <h3 className="mt-4 text-2xl font-medium text-text-primary transition-colors duration-300 group-hover:text-accent-secondary">{collection.title}</h3>
+        <p className="mt-4 text-sm leading-7 text-text-secondary">{collection.summary}</p>
       </div>
     </Link>
   );
