@@ -48,7 +48,7 @@ export function CatalogForm() {
 
   return (
     <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)} noValidate>
-      <FormTrust intro="Оставьте удобный контакт. Мы отправим каталог без длинного опроса." />
+      <FormTrust intro="Укажите удобный контакт. Мы отправим каталог без длинного опроса." />
       <FormField id="catalog-name" label="Имя" error={errors.name?.message}>
         <Input
           id="catalog-name"
