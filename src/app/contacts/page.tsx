@@ -20,7 +20,7 @@ export default function ContactsPage() {
           alt: "Боковой вид садового модуля из графитового контейнера"
         }}
         primaryCta={{ label: "Обсудить проект", href: "#contact-form" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
       <div id="contact-form">
         <ContactSection />

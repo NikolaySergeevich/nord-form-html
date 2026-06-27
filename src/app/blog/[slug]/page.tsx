@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { ArticleCard } from "@/components/cards/article-card";
 import { ProductCard } from "@/components/cards/product-card";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -82,6 +83,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </Container>
         </section>
         <PdfLeadMagnetSection />
+        <FinalCtaSection />
       </>
     );
   }
@@ -164,6 +166,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </section>
       ) : null}
       <PdfLeadMagnetSection />
+      <FinalCtaSection />
     </>
   );
 }

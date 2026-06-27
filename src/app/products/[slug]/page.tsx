@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/cards/project-card";
 import { CalculationForm } from "@/components/forms/calculation-form";
 import { ImageGallery } from "@/components/gallery/image-gallery";
 import { FAQSection } from "@/components/sections/faq-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Container } from "@/components/ui/container";
@@ -56,8 +57,8 @@ export default async function ProductPage({ params }: PageProps) {
         title={product.title}
         description={product.description}
         image={product.heroImage}
-        primaryCta={{ label: "Рассчитать модуль", href: "#calculation" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        primaryCta={{ label: "Получить предварительную оценку", href: "#calculation" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
         stats={[
           { value: product.area ?? "по задаче", label: "площадь" },
           { value: product.dimensions ?? "адаптивно", label: "габариты" },
@@ -84,6 +85,33 @@ export default async function ProductPage({ params }: PageProps) {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+      <section className="bg-background-dark py-24 text-text-inverse">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <Reveal>
+              <SectionHeader
+                eyebrow="История продукта"
+                title="От промышленной основы — к пространству с собственным характером."
+                description={`В основе «${product.title}» — прочная модульная геометрия, но ценность появляется не в металле самом по себе. Она появляется в планировке, сценарии, фасаде, свете и деталях, которые делают объект частью участка или бизнеса.`}
+                className="text-text-inverse [&_h2]:text-text-inverse [&_p]:text-text-inverse/70"
+              />
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="rounded-md border border-white/12 bg-white/[0.04] p-6 shadow-sm md:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-secondary">
+                  Трансформация
+                </p>
+                <p className="mt-5 text-2xl leading-snug text-text-inverse md:text-3xl">
+                  Морской контейнер проходит путь от промышленного объекта до современной архитектуры.
+                </p>
+                <p className="mt-5 text-text-inverse/70">
+                  Мы сохраняем его надёжность, но меняем восприятие: добавляем точную функцию, спокойную фасадную композицию, тёплые материалы и инженерные решения, которые помогают пространству работать каждый день.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -141,6 +169,9 @@ export default async function ProductPage({ params }: PageProps) {
       ) : null}
       <FAQSection items={product.faq} />
       <PdfLeadMagnetSection />
+      <FinalCtaSection
+        title={`Обсудите, как адаптировать «${product.title}» под ваш участок и сценарий.`}
+      />
     </>
   );
 }

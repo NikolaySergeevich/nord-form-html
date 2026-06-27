@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ArticleCard } from "@/components/cards/article-card";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
 import { Container } from "@/components/ui/container";
@@ -46,6 +47,7 @@ export default function BlogPage() {
         </Container>
       </section>
       <PdfLeadMagnetSection />
+      <FinalCtaSection />
     </>
   );
 }

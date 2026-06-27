@@ -17,6 +17,11 @@ export const navigation: NavigationItem[] = [
     description: "Конструкция, инженерия, сборка и установка"
   },
   {
+    label: "О компании",
+    href: "/about",
+    description: "Философия, принципы и подход Nord Form"
+  },
+  {
     label: "Блог",
     href: "/blog",
     description: "Практические материалы о модульной архитектуре"
@@ -41,6 +46,7 @@ export const footerNavigation = [
   {
     title: "Компания",
     items: [
+      { label: "О компании", href: "/about" },
       { label: "Проекты", href: "/projects" },
       { label: "Производство", href: "/production" },
       { label: "Блог", href: "/blog" },

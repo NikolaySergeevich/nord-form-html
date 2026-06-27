@@ -56,7 +56,7 @@ export default async function CollectionPage({ params }: PageProps) {
         description={collection.description}
         image={collection.heroImage}
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
-        secondaryCta={{ label: "Получить каталог", href: "/catalog" }}
+        secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
       <section className="bg-background-primary py-24">
         <Container>
