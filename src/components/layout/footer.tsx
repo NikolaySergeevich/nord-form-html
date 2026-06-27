@@ -14,8 +14,11 @@ export function Footer() {
             <Link href="/" className="font-display text-sm font-semibold uppercase tracking-[0.24em]">
               NORD FORM
             </Link>
+            <p className="mt-5 max-w-md font-display text-2xl leading-tight text-text-inverse">
+              Архитектура для жизни. Инженерия на десятилетия.
+            </p>
             <p className="mt-5 max-w-md text-sm leading-7 text-text-inverse/65">
-              Архитектурные модульные здания из морских контейнеров для участка, отдыха, работы и бизнеса.
+              Создаём модульные пространства, где функция, материалы, свет и конструкция работают как единое решение.
             </p>
             <Button asChild variant="inverse" className="mt-8">
               <Link href="/contacts">Обсудить проект</Link>

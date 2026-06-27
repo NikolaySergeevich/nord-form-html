@@ -12,7 +12,7 @@ type FinalCtaSectionProps = {
 
 export function FinalCtaSection({
   title = "Каждый проект начинается с разговора.",
-  description = "Расскажите, каким вы видите своё пространство. Мы предложим решение, которое объединит архитектуру, функциональность и инженерную точность."
+  description = "Расскажите, каким вы видите своё пространство. Мы предложим решение, в котором архитектура, функция и инженерная точность работают вместе."
 }: FinalCtaSectionProps) {
   return (
     <section className="bg-background-dark py-20 text-text-inverse">

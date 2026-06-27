@@ -19,7 +19,7 @@ export default function BlogPage() {
     <>
       <HeroSection
         eyebrow="Блог"
-        title="Практические материалы о модульной архитектуре."
+        title="Материалы о модульной архитектуре."
         description="Разбираем планировки, инженерные решения, хранение, фасады и коммерческие сценарии — спокойно и по существу."
         image={{
           src: "/images/products/spa-bath-bany/spa-bany-s-zadi-drova.webp",
@@ -33,7 +33,7 @@ export default function BlogPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Материалы"
-              title="Ответы на вопросы, которые возникают до проектирования."
+              title="Вопросы до проектирования."
               description="Как организовать пространство, выбрать конструктивные решения и понять, какой формат подойдёт вашему участку или бизнесу."
             />
           </Reveal>

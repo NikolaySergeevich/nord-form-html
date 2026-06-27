@@ -25,7 +25,7 @@ export function PdfLeadMagnetSection() {
               </p>
               <Modal
                 title="Получить каталог NORD FORM"
-                description="Оставьте контакты — мы отправим каталог и при необходимости поможем подобрать направление."
+                description="Укажите удобный контакт — мы отправим каталог и при необходимости поможем выбрать направление."
                 trigger={
                   <Button variant="inverse" size="lg" className="mt-9">
                     Получить каталог

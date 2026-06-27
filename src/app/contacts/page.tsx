@@ -13,7 +13,7 @@ export default function ContactsPage() {
     <>
       <HeroSection
         eyebrow="Контакты"
-        title="Расскажите о задаче — мы поможем собрать подходящий модуль."
+        title="Начнём с разговора о пространстве."
         description="На первом этапе достаточно знать назначение, место установки и примерный размер. Остальные решения разберём вместе и подготовим предварительную оценку."
         image={{
           src: "/images/products/garden-module/sadovyi-modul-s-boky.webp",
