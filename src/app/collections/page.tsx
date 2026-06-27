@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { CollectionCard } from "@/components/cards/collection-card";
+import { AudienceSection } from "@/components/sections/audience-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { PdfLeadMagnetSection } from "@/components/sections/pdf-lead-magnet-section";
@@ -28,6 +29,7 @@ export default function CollectionsPage() {
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
         secondaryCta={{ label: "Смотреть проекты", href: "/projects" }}
       />
+      <AudienceSection />
       <section id="collections" className="bg-background-primary py-24">
         <Container>
           <Reveal>

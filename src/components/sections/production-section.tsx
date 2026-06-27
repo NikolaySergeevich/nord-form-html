@@ -26,8 +26,8 @@ export function ProductionSection() {
           <Reveal delay={0.1}>
             <SectionHeader
               eyebrow="Как мы работаем"
-              title="Весь путь проекта понятен ещё до начала производства."
-              description="Каждый этап заканчивается конкретным результатом: согласованной задачей, концепцией, проектными решениями или подготовкой к следующему шагу."
+              title="Производство для нас — продолжение архитектурной идеи, а не просто сборка."
+              description="Каждый сварной шов, проём, фасадная линия и точка света должны поддерживать общий замысел. Поэтому мы связываем сценарий, конструкцию и детали до того, как модуль отправится в работу."
               className="text-text-inverse [&_h2]:text-text-inverse [&_p]:text-text-inverse/70"
             />
             <ol className="mt-10 grid gap-4">
@@ -46,7 +46,7 @@ export function ProductionSection() {
               ))}
             </ol>
             <Button asChild variant="inverse" className="mt-9">
-              <Link href="/production">Как мы работаем</Link>
+              <Link href="/production">Посмотреть процесс</Link>
             </Button>
           </Reveal>
         </div>

@@ -1,5 +1,7 @@
 import { CollectionsSection } from "@/components/sections/collections-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { BrandStorySection } from "@/components/sections/brand-story-section";
+import { EmotionalStatementSection } from "@/components/sections/emotional-statement-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FeaturedProjectSection } from "@/components/sections/featured-project-section";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -26,9 +28,11 @@ export default function HomePage() {
           { value: "Под задачу", label: "инженерия и комплектация" }
         ]}
       />
+      <BrandStorySection variant="warm" />
       <PhilosophySection />
       <CollectionsSection />
       <FeaturedProjectSection />
+      <EmotionalStatementSection index={2} />
       <ProductionSection />
       <FAQSection />
       <PdfLeadMagnetSection />

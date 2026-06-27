@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { ProjectCard } from "@/components/cards/project-card";
 import { ContactSection } from "@/components/sections/contact-section";
+import { EmotionalStatementSection } from "@/components/sections/emotional-statement-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -27,6 +28,7 @@ export default function ProjectsPage() {
         primaryCta={{ label: "Обсудить проект", href: "/contacts" }}
         secondaryCta={{ label: "Смотреть коллекции", href: "/collections" }}
       />
+      <EmotionalStatementSection index={0} />
       <section className="bg-background-primary py-24">
         <Container>
           <Reveal>
