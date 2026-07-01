@@ -1,7 +1,7 @@
 .split {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
+  gap: var(--space-xl);
 }
 
 .split--center {
@@ -13,7 +13,7 @@
 }
 
 .statement p {
-  margin-top: 22px;
+  margin-top: var(--space-md);
   color: rgba(248, 244, 236, 0.72);
   font-size: 1.15rem;
 }
@@ -39,11 +39,11 @@
 }
 
 .article-body p + p {
-  margin-top: 18px;
+  margin-top: var(--space-md);
 }
 
 .article-body h2 {
-  margin-top: 48px;
+  margin-top: var(--space-xl);
 }
 
 .meta-row {

@@ -1,6 +1,14 @@
 (function () {
   function initReveal() {
-    const items = document.querySelectorAll(".reveal");
+    const motionItems = document.querySelectorAll(".reveal-stagger, [data-reveal-stagger]");
+    motionItems.forEach((group) => {
+      const children = group.querySelectorAll(".reveal, .reveal-up, .reveal-fade, .reveal-scale");
+      children.forEach((child, index) => {
+        child.style.setProperty("--reveal-delay", `${Math.min(index * 75, 300)}ms`);
+      });
+    });
+
+    const items = document.querySelectorAll(".reveal, .reveal-up, .reveal-fade, .reveal-scale");
     if (!items.length) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {

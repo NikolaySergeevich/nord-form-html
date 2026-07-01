@@ -28,15 +28,23 @@
         toggle.setAttribute("aria-expanded", "false");
       });
     });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !menu.classList.contains("is-open")) return;
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.focus();
+    });
   }
 
   function initSmoothScroll() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (event) => {
         const target = document.querySelector(link.getAttribute("href"));
         if (!target) return;
         event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       });
     });
   }
