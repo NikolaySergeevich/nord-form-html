@@ -16,4 +16,18 @@
     opacity: 1;
     transform: none;
   }
+
+  .reveal-up,
+  .reveal-fade,
+  .reveal-scale,
+  .hero__eyebrow,
+  .hero__title,
+  .hero__description,
+  .hero__actions,
+  .hero__trust,
+  .hero__stats {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
 }

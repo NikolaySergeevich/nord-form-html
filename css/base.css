@@ -9,6 +9,7 @@ body {
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
@@ -56,7 +57,7 @@ p {
 
 .section {
   position: relative;
-  padding: 96px 0;
+  padding: var(--space-3xl) 0;
 }
 
 .section--muted {
@@ -94,17 +95,65 @@ p {
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: var(--space-md);
 }
 
 .grid--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
 .grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
 }
 
 .grid--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+.mt-xs {
+  margin-top: var(--space-xs);
+}
+
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.text-small {
+  font-size: 0.95rem;
+}
+
+.max-md {
+  max-width: 520px;
+}
+
+.max-lg {
+  max-width: 720px;
+}
+
+.section-gap {
+  margin-top: var(--space-xl);
+}
+
+.block-gap {
+  gap: var(--space-md);
+}
+
+.card-grid-gap {
+  gap: var(--space-md);
 }
