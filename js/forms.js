@@ -52,7 +52,7 @@
         const status = form.querySelector(".form__status");
         const type = form.getAttribute("data-nord-form");
         const formData = new FormData(form);
-        const lead = { type };
+        const lead = { formType: type };
         formData.forEach((value, key) => {
           lead[key] = String(value).trim();
         });
@@ -69,8 +69,8 @@
           if (status) {
             status.textContent =
               type === "catalog"
-                ? "Спасибо! Каталог готов к скачиванию. Мы также свяжемся с вами для уточнения задачи."
-                : "Спасибо! Заявка принята. В ближайшее время свяжемся с вами.";
+                ? "Спасибо! Мы получили вашу заявку. В ближайшее время свяжемся с вами для обсуждения проекта."
+                : "Спасибо! Мы получили вашу заявку. В ближайшее время свяжемся с вами для обсуждения проекта.";
           }
           if (submit) {
             submit.disabled = false;
