@@ -23,5 +23,27 @@
     items.forEach((item) => observer.observe(item));
   }
 
-  window.NordFormAnimations = { init: initReveal };
+  function initFAQ() {
+    document.querySelectorAll(".faq__button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq__item");
+        const open = !item.classList.contains("is-open");
+        item.classList.toggle("is-open", open);
+        button.setAttribute("aria-expanded", String(open));
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        button.click();
+      });
+    });
+  }
+
+  window.NordFormAnimations = {
+    init: function () {
+      initReveal();
+      initFAQ();
+    }
+  };
 })();
