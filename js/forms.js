@@ -1,21 +1,6 @@
 (function () {
-  function getLeads() {
-    try {
-      return JSON.parse(localStorage.getItem("nordFormLeads") || "[]");
-    } catch (error) {
-      return [];
-    }
-  }
-
-  function saveLead(lead) {
-    const leads = getLeads();
-    leads.push({
-      ...lead,
-      createdAt: new Date().toISOString(),
-      page: window.location.pathname
-    });
-    localStorage.setItem("nordFormLeads", JSON.stringify(leads));
-  }
+  const script = Array.from(document.scripts).find((item) => /(?:^|\/)js\/forms\.js(?:\?|$)/.test(item.src));
+  const endpoint = script ? new URL("../send.php", script.src).href : "/send.php";
 
   function setError(field, message) {
     const error = field.closest(".field").querySelector(".field__error");
@@ -44,7 +29,7 @@
 
   function initForms() {
     document.querySelectorAll("[data-nord-form]").forEach((form) => {
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
         if (!validate(form)) return;
 
@@ -52,7 +37,10 @@
         const status = form.querySelector(".form__status");
         const type = form.getAttribute("data-nord-form");
         const formData = new FormData(form);
-        const lead = { formType: type };
+        const lead = {
+          formType: type,
+          page: window.location.href
+        };
         formData.forEach((value, key) => {
           lead[key] = String(value).trim();
         });
@@ -63,17 +51,36 @@
           submit.textContent = "Отправляем";
         }
 
-        window.setTimeout(() => {
-          saveLead(lead);
+        if (status) {
+          status.textContent = "";
+        }
+
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(lead)
+          });
+          const result = await response.json().catch(() => ({}));
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || "Не удалось отправить заявку.");
+          }
+
           form.reset();
           if (status) {
             status.textContent = "Спасибо! Мы получили вашу заявку. В ближайшее время свяжемся с вами для обсуждения проекта.";
           }
+        } catch (error) {
+          if (status) {
+            status.textContent = error.message || "Не удалось отправить заявку. Попробуйте ещё раз или свяжитесь с нами по телефону.";
+          }
+        } finally {
           if (submit) {
             submit.disabled = false;
             submit.textContent = submit.dataset.originalText || "Отправить";
           }
-        }, 450);
+        }
       });
     });
   }

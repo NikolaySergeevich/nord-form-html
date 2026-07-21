@@ -181,6 +181,17 @@
   align-items: end;
 }
 
+.hero__grid > * {
+  min-width: 0;
+}
+
+.hero__title {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
 .hero__eyebrow {
   margin-bottom: var(--space-md);
   color: var(--accent-soft);
@@ -223,14 +234,17 @@
 .hero__stats strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 2rem;
-  line-height: 1;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.08;
 }
 
 .hero__stats span {
+  display: block;
+  margin-top: 8px;
   color: rgba(248, 244, 236, 0.65);
   font-size: 0.76rem;
   letter-spacing: 0.08em;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
