@@ -42,6 +42,32 @@
     padding: var(--space-2xl) 0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 6vw, 1.7rem);
+  }
+
+  p,
+  .lead,
+  .section-header,
+  .feature-box,
+  .card__content,
+  .statement {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
   .hero,
   .hero__content {
     min-height: auto;
@@ -49,6 +75,27 @@
 
   .hero__content {
     padding: var(--space-2xl) 0 var(--space-lg);
+  }
+
+  .hero__eyebrow {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    letter-spacing: 0.14em;
+    line-height: 1.45;
+  }
+
+  .hero__title {
+    font-size: clamp(1.85rem, 7.5vw, 2.2rem);
+    line-height: 0.98;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    text-wrap: wrap;
+  }
+
+  .hero__description {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .hero__actions {
@@ -60,7 +107,9 @@
   }
 
   .hero__stats {
-    display: none;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md);
   }
 
   .grid--4,
@@ -73,5 +122,15 @@
 
   .philosophy-card {
     min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__grid > div:first-child {
+    width: min(100%, 21rem);
+  }
+
+  .hero__title {
+    font-size: clamp(1.6rem, 7vw, 1.95rem);
   }
 }
