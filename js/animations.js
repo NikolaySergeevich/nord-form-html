@@ -32,12 +32,27 @@
   }
 
   function initFAQ() {
-    document.querySelectorAll(".faq__button").forEach((button) => {
+    document.querySelectorAll(".faq__button").forEach((button, index) => {
+      const item = button.closest(".faq__item");
+      const panel = item ? item.querySelector(".faq__panel") : null;
+      const marker = button.querySelector("span");
+      if (!item || !panel) return;
+
+      if (!button.id) {
+        button.id = `faq-question-${index + 1}`;
+      }
+      if (!panel.id) {
+        panel.id = `faq-answer-${index + 1}`;
+      }
+      button.setAttribute("aria-controls", panel.id);
+      panel.setAttribute("role", "region");
+      panel.setAttribute("aria-labelledby", button.id);
+
       button.addEventListener("click", () => {
-        const item = button.closest(".faq__item");
         const open = !item.classList.contains("is-open");
         item.classList.toggle("is-open", open);
         button.setAttribute("aria-expanded", String(open));
+        if (marker) marker.textContent = open ? "−" : "+";
       });
 
       button.addEventListener("keydown", (event) => {

@@ -9,7 +9,18 @@ body {
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   overflow-x: hidden;
+}
+
+body.is-scroll-locked {
+  overflow: hidden;
+}
+
+address {
+  font-style: normal;
 }
 
 h1,
@@ -67,6 +78,10 @@ p {
 .section--dark {
   background: var(--background-dark);
   color: var(--text-inverse);
+}
+
+.section--dark .lead {
+  color: rgba(248, 244, 236, 0.72);
 }
 
 .section + .section::before {

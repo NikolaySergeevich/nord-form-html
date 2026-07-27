@@ -6,8 +6,23 @@
     grid-template-columns: 1fr;
   }
 
+  .trust-layout,
+  .visit-layout,
+  .delivery-layout,
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
   .hero__stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-grid--shipping {
+    grid-template-columns: minmax(180px, 0.75fr) minmax(0, 1.25fr);
   }
 }
 
@@ -46,7 +61,9 @@
   h2,
   h3,
   h4 {
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
     text-wrap: wrap;
   }
 
@@ -65,7 +82,9 @@
   .card__content,
   .statement {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .hero,
@@ -79,12 +98,15 @@
 
   .hero__eyebrow {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
     letter-spacing: 0.14em;
     line-height: 1.45;
   }
 
-  .hero__title {
+  .hero__title,
+  .hero--trust .hero__title {
     font-size: clamp(1.85rem, 7.5vw, 2.2rem);
     line-height: 0.98;
     overflow-wrap: normal;
@@ -95,7 +117,9 @@
 
   .hero__description {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .hero__actions {
@@ -103,6 +127,16 @@
   }
 
   .hero__actions .button {
+    width: 100%;
+  }
+
+  .button-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button-row .button,
+  .price-card .button {
     width: 100%;
   }
 
@@ -120,8 +154,38 @@
     grid-template-columns: 1fr;
   }
 
+  .fact-grid,
+  .trust-layout .fact-grid,
+  .price-grid,
+  .configuration-grid,
+  .photo-grid,
+  .photo-grid--shipping,
+  .warranty-columns {
+    grid-template-columns: 1fr;
+  }
+
   .philosophy-card {
     min-height: auto;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .modal,
+  .lightbox {
+    align-items: start;
+    padding: 12px;
+  }
+
+  .modal__dialog {
+    max-height: calc(100svh - 24px);
+    padding: 24px 18px;
+  }
+
+  .modal__header {
+    padding-right: 44px;
   }
 }
 
@@ -130,7 +194,8 @@
     width: min(100%, 21rem);
   }
 
-  .hero__title {
+  .hero__title,
+  .hero--trust .hero__title {
     font-size: clamp(1.6rem, 7vw, 1.95rem);
   }
 }

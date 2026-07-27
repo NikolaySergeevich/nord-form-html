@@ -88,8 +88,18 @@ $phone = clean($data['phone'] ?? '', 80);
 $email = clean($data['email'] ?? '', 160);
 $message = clean($data['message'] ?? '', 1500);
 $formType = clean($data['formType'] ?? '', 80);
+$requestType = clean($data['request_type'] ?? '', 120);
 $product = clean($data['product'] ?? '', 120);
+$variant = clean($data['variant'] ?? '', 160);
 $page = clean($data['page'] ?? '', 500);
+$submittedAt = clean($data['submittedAt'] ?? '', 80);
+$utmValues = [
+    'utm_source' => clean($data['utm_source'] ?? '', 200),
+    'utm_medium' => clean($data['utm_medium'] ?? '', 200),
+    'utm_campaign' => clean($data['utm_campaign'] ?? '', 200),
+    'utm_term' => clean($data['utm_term'] ?? '', 200),
+    'utm_content' => clean($data['utm_content'] ?? '', 200),
+];
 
 if ($name === '' || $phone === '') {
     respond(422, ['ok' => false, 'message' => 'Укажите имя и телефон.']);
@@ -116,6 +126,9 @@ $typeNames = [
     'consultation' => 'Консультация',
     'catalog' => 'Запрос каталога',
     'calculation' => 'Расчёт проекта',
+    'visit' => 'Посещение производства',
+    'garden-calculation' => 'Расчёт садового модуля',
+    'delivery-consultation' => 'Консультация по доставке и монтажу',
 ];
 $productNames = [
     'garden-module' => 'Садовый модуль',
@@ -124,10 +137,31 @@ $productNames = [
     'workshop-flowers-module' => 'Цветочный модуль',
 ];
 
+$formLabel = $typeNames[$formType] ?? ($formType ?: 'Заявка');
+$requestTypeLabel = $typeNames[$requestType] ?? ($requestType ?: $formLabel);
+$productLabel = $product !== '' ? ($productNames[$product] ?? $product) : 'Не указан';
+$pageLabel = $page !== '' ? $page : 'Не указана';
+$messageLabel = $message !== '' ? $message : 'Не указан';
+$minskTimezone = new DateTimeZone('Europe/Minsk');
+$serverTime = new DateTimeImmutable('now', $minskTimezone);
+$clientTime = null;
+
+if (
+    $submittedAt !== ''
+    && preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})$/D', $submittedAt)
+) {
+    try {
+        $clientTime = (new DateTimeImmutable($submittedAt))->setTimezone($minskTimezone);
+    } catch (Throwable $exception) {
+        $clientTime = null;
+    }
+}
+
 $lines = [
     '<b>Новая заявка с сайта NORD FORM</b>',
     '',
-    '<b>Форма:</b> ' . escapeTelegram($typeNames[$formType] ?? ($formType ?: 'Заявка')),
+    '<b>Форма:</b> ' . escapeTelegram($formLabel),
+    '<b>Тип запроса:</b> ' . escapeTelegram($requestTypeLabel),
     '<b>Имя:</b> ' . escapeTelegram($name),
     '<b>Телефон:</b> ' . escapeTelegram($phone),
 ];
@@ -135,14 +169,40 @@ $lines = [
 if ($email !== '') {
     $lines[] = '<b>Email:</b> ' . escapeTelegram($email);
 }
-if ($product !== '') {
-    $lines[] = '<b>Продукт:</b> ' . escapeTelegram($productNames[$product] ?? $product);
+$lines[] = '<b>Продукт:</b> ' . escapeTelegram($productLabel);
+if ($variant !== '') {
+    $lines[] = '<b>Вариант:</b> ' . escapeTelegram($variant);
 }
-if ($message !== '') {
-    $lines[] = '<b>Комментарий:</b> ' . escapeTelegram($message);
+$lines[] = '<b>Страница:</b> ' . escapeTelegram($pageLabel);
+$lines[] = '<b>Комментарий:</b> ' . escapeTelegram($messageLabel);
+$lines[] = '<b>Дата и время:</b> ' . escapeTelegram($serverTime->format('d.m.Y H:i:s') . ' (Europe/Minsk)');
+
+if ($clientTime instanceof DateTimeImmutable) {
+    $lines[] = '<b>Время клиента:</b> ' . escapeTelegram($clientTime->format('d.m.Y H:i:s') . ' (Europe/Minsk)');
 }
-if ($page !== '') {
-    $lines[] = '<b>Страница:</b> ' . escapeTelegram($page);
+
+$utmLabels = [
+    'utm_source' => 'utm_source',
+    'utm_medium' => 'utm_medium',
+    'utm_campaign' => 'utm_campaign',
+    'utm_term' => 'utm_term',
+    'utm_content' => 'utm_content',
+];
+$hasUtm = false;
+foreach ($utmValues as $utmValue) {
+    if ($utmValue !== '') {
+        $hasUtm = true;
+        break;
+    }
+}
+if ($hasUtm) {
+    $lines[] = '';
+    $lines[] = '<b>UTM-метки:</b>';
+    foreach ($utmValues as $utmKey => $utmValue) {
+        if ($utmValue !== '') {
+            $lines[] = '<b>' . $utmLabels[$utmKey] . ':</b> ' . escapeTelegram($utmValue);
+        }
+    }
 }
 
 $url = 'https://api.telegram.org/bot' . $botToken . '/sendMessage';
