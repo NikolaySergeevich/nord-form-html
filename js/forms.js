@@ -1,9 +1,73 @@
 (function () {
   const script = Array.from(document.scripts).find((item) => /(?:^|\/)js\/forms\.js(?:\?|$)/.test(item.src));
   const endpoint = script ? new URL("../send.php", script.src).href : "/send.php";
+  const initializedForms = new WeakSet();
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  const storagePrefix = "nord-form:";
+  const leadSubmittedKey = "nord-form:lead-submitted:v1";
+
+  function normalizeUtm(value) {
+    return typeof value === "string" ? value.trim().slice(0, 200) : "";
+  }
+
+  function getStoredUtm(key) {
+    try {
+      return normalizeUtm(window.sessionStorage.getItem(storagePrefix + key));
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function storeUtm(key, value) {
+    try {
+      window.sessionStorage.setItem(storagePrefix + key, value);
+    } catch (error) {
+      // Storage can be unavailable in private or restricted browser contexts.
+    }
+  }
+
+  function collectUtm() {
+    const values = {};
+    let params = null;
+
+    try {
+      params = new URLSearchParams(window.location.search);
+    } catch (error) {
+      params = null;
+    }
+
+    utmKeys.forEach((key) => {
+      const current = params ? normalizeUtm(params.get(key)) : "";
+      if (current) {
+        values[key] = current;
+        storeUtm(key, current);
+        return;
+      }
+
+      const stored = getStoredUtm(key);
+      if (stored) {
+        values[key] = stored;
+      }
+    });
+
+    return values;
+  }
+
+  function markLeadSubmitted(formType) {
+    try {
+      window.sessionStorage.setItem(leadSubmittedKey, "1");
+    } catch (error) {
+      // Storage can be unavailable in private or restricted browser contexts.
+    }
+
+    document.dispatchEvent(new CustomEvent("nordform:lead-submitted", {
+      detail: { formType }
+    }));
+  }
 
   function setError(field, message) {
-    const error = field.closest(".field").querySelector(".field__error");
+    const wrapper = field.closest(".field");
+    const error = wrapper ? wrapper.querySelector(".field__error") : null;
     field.setAttribute("aria-invalid", message ? "true" : "false");
     if (error) error.textContent = message || "";
   }
@@ -28,7 +92,12 @@
   }
 
   function initForms() {
+    collectUtm();
+
     document.querySelectorAll("[data-nord-form]").forEach((form) => {
+      if (initializedForms.has(form)) return;
+      initializedForms.add(form);
+
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         if (!validate(form)) return;
@@ -37,12 +106,14 @@
         const status = form.querySelector(".form__status");
         const type = form.getAttribute("data-nord-form");
         const formData = new FormData(form);
-        const lead = {
-          formType: type,
-          page: window.location.href
-        };
+        const lead = {};
         formData.forEach((value, key) => {
           lead[key] = String(value).trim();
+        });
+        Object.assign(lead, collectUtm(), {
+          formType: type,
+          page: window.location.href,
+          submittedAt: new Date().toISOString()
         });
 
         if (submit) {
@@ -67,6 +138,7 @@
             throw new Error(result.message || "Не удалось отправить заявку.");
           }
 
+          markLeadSubmitted(type);
           form.reset();
           if (status) {
             status.textContent = "Спасибо! Мы получили вашу заявку. В ближайшее время свяжемся с вами для обсуждения проекта.";

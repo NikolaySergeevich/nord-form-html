@@ -6,8 +6,23 @@
     grid-template-columns: 1fr;
   }
 
+  .trust-layout,
+  .visit-layout,
+  .delivery-layout,
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
   .hero__stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-grid--shipping {
+    grid-template-columns: minmax(180px, 0.75fr) minmax(0, 1.25fr);
   }
 }
 
@@ -16,9 +31,54 @@
     grid-template-columns: 1fr;
     row-gap: var(--space-md);
   }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .site-footer {
+    padding-bottom: calc(var(--space-lg) + 72px + env(safe-area-inset-bottom));
+  }
+
+  .contact-dock {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    border-top: 1px solid rgba(199, 192, 182, 0.64);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(242, 239, 232, 0.94);
+    backdrop-filter: blur(18px);
+  }
+
+  .contact-dock > .contact-action {
+    width: auto;
+    min-width: 0;
+    min-height: 50px;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    padding: 9px 10px;
+    box-shadow: none;
+    font-size: 0.88rem;
+  }
+
+  .contact-action__desktop-label {
+    display: none;
+  }
+
+  .contact-action__mobile-label {
+    display: inline;
+  }
+
+  .back-to-top {
+    display: grid;
+  }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1100px) {
   .nav,
   .header-actions {
     display: none;
@@ -27,7 +87,9 @@
   .mobile-toggle {
     display: inline-flex;
   }
+}
 
+@media (max-width: 920px) {
   .gallery {
     grid-template-columns: 1fr;
   }
@@ -46,12 +108,14 @@
   h2,
   h3,
   h4 {
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
     text-wrap: wrap;
   }
 
   h2 {
-    font-size: clamp(1.85rem, 8vw, 2.6rem);
+    font-size: clamp(1.65rem, 7.2vw, 2.35rem);
   }
 
   h3 {
@@ -65,7 +129,9 @@
   .card__content,
   .statement {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .hero,
@@ -79,12 +145,15 @@
 
   .hero__eyebrow {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
     letter-spacing: 0.14em;
     line-height: 1.45;
   }
 
-  .hero__title {
+  .hero__title,
+  .hero--trust .hero__title {
     font-size: clamp(1.85rem, 7.5vw, 2.2rem);
     line-height: 0.98;
     overflow-wrap: normal;
@@ -95,7 +164,9 @@
 
   .hero__description {
     max-width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .hero__actions {
@@ -103,6 +174,16 @@
   }
 
   .hero__actions .button {
+    width: 100%;
+  }
+
+  .button-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button-row .button,
+  .price-card .button {
     width: 100%;
   }
 
@@ -120,17 +201,64 @@
     grid-template-columns: 1fr;
   }
 
+  .fact-grid,
+  .trust-layout .fact-grid,
+  .price-grid,
+  .configuration-grid,
+  .photo-grid,
+  .photo-grid--shipping,
+  .warranty-columns {
+    grid-template-columns: 1fr;
+  }
+
   .philosophy-card {
     min-height: auto;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .modal,
+  .lightbox {
+    align-items: start;
+    padding: 12px;
+  }
+
+  .modal__dialog {
+    max-height: calc(100svh - 24px);
+    padding: 24px 18px;
+  }
+
+  .modal__header {
+    padding-right: 44px;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(1.45rem, 7vw, 1.75rem);
+  }
+
+  .modal__header h2 {
+    font-size: clamp(1.3rem, 6vw, 1.65rem);
   }
 }
 
 @media (max-width: 420px) {
+  .form-card {
+    padding: 16px;
+  }
+
+  .field select {
+    padding-inline: 10px;
+  }
+
   .hero__grid > div:first-child {
     width: min(100%, 21rem);
   }
 
-  .hero__title {
+  .hero__title,
+  .hero--trust .hero__title {
     font-size: clamp(1.6rem, 7vw, 1.95rem);
   }
 }

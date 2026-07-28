@@ -4,8 +4,22 @@
   gap: var(--space-xl);
 }
 
+.split > * {
+  min-width: 0;
+}
+
 .split--center {
   align-items: center;
+}
+
+:where(
+  .trust-layout,
+  .visit-layout,
+  .delivery-layout,
+  .legal-layout,
+  .split:not(.philosophy-layout)
+) h2 {
+  font-size: clamp(2.15rem, 4vw, 3.5rem);
 }
 
 .statement {
@@ -52,4 +66,109 @@
   gap: 10px;
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+.hero--trust .hero__title {
+  max-width: 980px;
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+}
+
+.hero__legal-line {
+  max-width: 840px;
+  margin-top: var(--space-md);
+  color: var(--accent-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: normal;
+}
+
+.trust-layout,
+.visit-layout,
+.delivery-layout,
+.legal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.trust-copy {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.trust-copy .lead + .lead {
+  margin-top: 0;
+}
+
+.trust-layout > *,
+.visit-layout > *,
+.delivery-layout > *,
+.legal-layout > * {
+  min-width: 0;
+}
+
+.trust-layout .fact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+.visit-panel,
+.legal-panel,
+.warranty-panel,
+.cta-panel {
+  min-width: 0;
+  border: 1px solid rgba(152, 120, 77, 0.38);
+  border-radius: var(--radius-lg);
+  padding: clamp(26px, 4vw, 48px);
+  background:
+    linear-gradient(145deg, rgba(208, 184, 143, 0.1), transparent 60%),
+    var(--surface-primary);
+  box-shadow: var(--shadow-sm);
+  overflow-wrap: normal;
+}
+
+.visit-panel .button-row,
+.cta-panel .button-row {
+  margin-top: var(--space-lg);
+}
+
+.section--dark .cta-panel {
+  border-color: rgba(248, 244, 236, 0.18);
+  background:
+    linear-gradient(145deg, rgba(208, 184, 143, 0.08), transparent 60%),
+    rgba(248, 244, 236, 0.045);
+  color: var(--text-inverse);
+}
+
+.section--dark .cta-panel .lead {
+  color: rgba(248, 244, 236, 0.72);
+}
+
+.legal-panel address {
+  display: grid;
+  gap: 8px;
+  margin-top: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.configuration-card h3 {
+  margin-bottom: var(--space-md);
+}
+
+.zone-card__length {
+  display: inline-block;
+  margin-top: var(--space-md);
+  color: var(--accent-secondary);
+  font-weight: 800;
+}
+
+.warranty-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.section-anchor {
+  scroll-margin-top: 72px;
 }

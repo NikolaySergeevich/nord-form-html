@@ -4,13 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>О компании | NORD FORM</title>
-  <meta name="description" content="Философия NORD FORM: современная модульная архитектура из морских контейнеров для жизни, участка и бизнеса.">
-  <meta property="og:title" content="О компании | NORD FORM">
-  <meta property="og:description" content="Философия NORD FORM: современная модульная архитектура из морских контейнеров для жизни, участка и бизнеса.">
+  <title>О компании Nord Form | ООО «СТОРЭДЖ»</title>
+  <meta name="description" content="Nord Form — направление ООО «СТОРЭДЖ». Производство модульных объектов в Борисове, доставка и монтаж по всей Беларуси.">
+  <meta property="og:title" content="О компании Nord Form | ООО «СТОРЭДЖ»">
+  <meta property="og:description" content="Nord Form — направление ООО «СТОРЭДЖ». Производство модульных объектов в Борисове, доставка и монтаж по всей Беларуси.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/products/garden-module/sadovyi-modul-s-peredi.webp">
   <link rel="canonical" href="about.html">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nord Form",
+      "legalName": "ООО «СТОРЭДЖ»",
+      "taxID": "193825141",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BY",
+        "addressLocality": "Минск",
+        "streetAddress": "ул. Мстиславца, 12, помещение 251"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Республика Беларусь"
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;520;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,14 +48,14 @@
     <a class="brand" href="index.html" aria-label="NORD FORM">
       <span class="brand__mark">NF</span><span class="brand__text">NORD FORM</span>
     </a>
-    <nav class="nav" aria-label="Основная навигация"><a href="collections.html">Коллекции</a><a href="projects.html">Проекты</a><a href="production.html">Производство</a><a href="about.html">О компании</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></nav>
+    <nav class="nav" aria-label="Основная навигация"><a href="collections.html">Коллекции</a><a href="projects.html">Проекты</a><a href="production.html">Производство</a><a href="about.html" aria-current="page">О компании</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></nav>
     <div class="header-actions">
       <a class="button button--secondary" href="contacts.html">Обсудить проект</a>
       <a class="button" href="catalog.html">Получить каталог</a>
     </div>
-    <button class="mobile-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+    <button class="mobile-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
   </div>
-  <div class="mobile-menu"><div class="container mobile-menu__inner"><a href="collections.html">Коллекции</a><a href="projects.html">Проекты</a><a href="production.html">Производство</a><a href="about.html">О компании</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a><a class="button" href="catalog.html">Получить каталог</a></div></div>
+  <div class="mobile-menu" id="mobile-menu"><div class="container mobile-menu__inner"><a href="collections.html">Коллекции</a><a href="projects.html">Проекты</a><a href="production.html">Производство</a><a href="about.html" aria-current="page">О компании</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a><a class="button" href="catalog.html">Получить каталог</a></div></div>
 </header>
 <main><section class="hero">
   <div class="hero__image"><img src="images/products/garden-module/sadovyi-modul-s-boky.webp" alt="Графитовый модуль Nord Form с деревянными рейками на участке"></div>
@@ -46,15 +65,37 @@
       <div>
         <p class="hero__eyebrow eyebrow">О компании</p>
         <h1 class="hero__title">Пространства из промышленной основы.</h1>
-        <p class="hero__description">Мы верим, что модульное здание может быть не компромиссом, а точной архитектурой: спокойной, функциональной и рассчитанной на долгую жизнь.</p>
+        <p class="hero__description">Nord Form проектирует и производит модульные объекты на базе морских контейнеров. Работы выполняет ООО «СТОРЭДЖ»: производство находится в Борисове, доставка и монтаж доступны по всей Беларуси.</p>
+        <p class="hero__legal-line">ООО «СТОРЭДЖ» · УНП 193825141</p>
         <div class="hero__actions">
-          <a class="button button--inverse" href="contacts.html">Обсудить проект</a>
-          <a class="button button--ghost" href="projects.html">Смотреть проекты</a>
+          <button class="button button--inverse" type="button" data-modal-open="request-modal" data-modal-title="Записаться на производство" data-request-type="Посещение производства" data-product="Посещение производства в Борисове">Записаться на производство</button>
+          <a class="button button--ghost" href="production.html">Посмотреть производство</a>
         </div>
-        <ul class="hero__trust"><li>✓ Консультация без обязательств</li><li>✓ Предварительная оценка</li><li>✓ Решение под вашу задачу</li></ul>
+        <ul class="hero__trust"><li>Производство в Борисове</li><li>Посещение по записи</li><li>Гарантия закрепляется в договоре</li></ul>
       </div>
       
     </div>
+  </div>
+</section><section class="section">
+  <div class="container legal-layout">
+    <div class="section-header reveal">
+      <div><p class="eyebrow">Юридическое лицо</p><h2 class="mt-sm">Nord Form — направление ООО «СТОРЭДЖ»</h2></div>
+      <p class="lead">Nord Form проектирует и производит модульные объекты на базе морских контейнеров. Работы выполняет ООО «СТОРЭДЖ». Юридический адрес компании находится в Минске, производство — в Борисове.</p>
+    </div>
+    <div class="legal-panel reveal-scale">
+      <h3>Реквизиты</h3>
+      <address>
+        <p><strong>ООО «СТОРЭДЖ»</strong></p>
+        <p><strong>УНП:</strong> 193825141</p>
+        <p>Республика Беларусь, г. Минск, ул. Мстиславца, 12, помещение 251</p>
+      </address>
+    </div>
+  </div>
+  <div class="container fact-grid section-gap reveal-stagger">
+    <article class="fact-card reveal-up"><p class="card__meta">Кто выполняет работы</p><h3 class="mt-sm">ООО «СТОРЭДЖ»</h3><p class="mt-md">Компания отвечает за предусмотренные договором проектирование, изготовление и монтажные работы.</p></article>
+    <article class="fact-card reveal-up"><p class="card__meta">Где производство</p><h3 class="mt-sm">Борисов</h3><p class="mt-md">Основные производственные работы выполняются на площадке в Борисове.</p></article>
+    <article class="fact-card reveal-up"><p class="card__meta">Можно ли увидеть процесс</p><h3 class="mt-sm">Да, по записи</h3><p class="mt-md">Заказчик может посетить производство и увидеть текущие этапы работ.</p></article>
+    <article class="fact-card reveal-up"><p class="card__meta">Доставка, монтаж, гарантия</p><h3 class="mt-sm">Фиксируются в договоре</h3><p class="mt-md">Состав работ рассчитывается по условиям участка; гарантия на конструкцию, изготовление и выполненный монтаж — 12 месяцев с даты акта приёмки.</p></article>
   </div>
 </section><section class="section">
   <div class="container split split--center philosophy-layout">
@@ -70,7 +111,42 @@
   </div><div class="grid grid--3 section-gap reveal-stagger"><article class="feature-box reveal-up"><h3>Архитектура важнее площади</h3><p class="lead">Ценность пространства определяется не метрами, а тем, насколько точно оно отвечает жизни, работе или бизнесу владельца.</p></article><article class="feature-box reveal-up"><h3>Функция рождает форму</h3><p class="lead">Мы начинаем с ежедневного сценария: как человек входит, где хранит вещи, как движется свет и где инженерия должна оставаться незаметной.</p></article><article class="feature-box reveal-up"><h3>Модуль должен быть красивым</h3><p class="lead">Даже хозяйственный объект может выглядеть собранно, спокойно и уместно рядом с современным домом или коммерческим пространством.</p></article><article class="feature-box reveal-up"><h3>Долговечность — это уважение</h3><p class="lead">Хорошее решение не требует оправданий через год. Конструкция, фасад, материалы и обслуживание должны быть рассчитаны заранее.</p></article><article class="feature-box reveal-up"><h3>Минимализм должен работать</h3><p class="lead">Сдержанный внешний вид имеет смысл только тогда, когда за ним стоит удобная планировка, точная инженерия и понятная эксплуатация.</p></article><article class="feature-box reveal-up"><h3>Красота должна быть надёжной</h3><p class="lead">Скорость и заводская готовность не отменяют пропорции, фактуру, свет и архитектурный характер.</p></article></div></div></section><section class="section section--dark"><div class="container statement reveal"><p class="eyebrow">Подход</p><h2>Хороший модуль не должен выглядеть временным.</h2><p>Он должен быть частью среды — с ясной формой, точными деталями и ощущением, что объект всегда должен был стоять именно здесь.</p></div></section><section class="section section--muted"><div class="container"><div class="section-header  reveal">
     <div><p class="eyebrow">Для кого</p><h2 class="mt-sm">Когда важны порядок, образ и срок службы.</h2></div>
     <p class="lead">Nord Form подходит задачам, где модуль должен быть частью среды, а не временным компромиссом.</p>
-  </div><div class="grid grid--3 section-gap reveal-stagger"><article class="feature-box reveal-up"><h3>Для людей, которым важно, как выглядит их участок</h3><p class="lead">Когда хозяйственная функция должна быть не спрятана за домом, а аккуратно встроена в общий образ пространства.</p></article><article class="feature-box reveal-up"><h3>Для предпринимателей, которым нужен объект с характером</h3><p class="lead">Не временный павильон, а современная точка контакта с клиентом: витрина, мастерская, офис или сервисное пространство.</p></article><article class="feature-box reveal-up"><h3>Для тех, кто выбирает порядок и долгий срок службы</h3><p class="lead">Когда хочется один раз продумать хранение, отдых или работу — и получить решение, которое не требует постоянных компромиссов.</p></article></div></div></section><section class="section section--muted">
+  </div><div class="grid grid--3 section-gap reveal-stagger"><article class="feature-box reveal-up"><h3>Для людей, которым важно, как выглядит их участок</h3><p class="lead">Когда хозяйственная функция должна быть не спрятана за домом, а аккуратно встроена в общий образ пространства.</p></article><article class="feature-box reveal-up"><h3>Для предпринимателей, которым нужен объект с характером</h3><p class="lead">Не временный павильон, а современная точка контакта с клиентом: витрина, мастерская, офис или сервисное пространство.</p></article><article class="feature-box reveal-up"><h3>Для тех, кто выбирает порядок и долгий срок службы</h3><p class="lead">Когда хочется один раз продумать хранение, отдых или работу — и получить решение, которое не требует постоянных компромиссов.</p></article></div></div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><p class="eyebrow">Производство, которое можно посетить</p><h2 class="mt-sm">Увидеть процесс своими глазами</h2></div>
+      <p class="lead">Мы не скрываем производственный процесс. По предварительной записи заказчик может приехать на площадку в Борисове, увидеть текущие работы и обсудить свой проект.</p>
+    </div>
+    <div class="photo-grid section-gap reveal-stagger">
+      <figure class="photo-card reveal-scale">
+        <button class="photo-card__button" type="button" data-lightbox data-image-src="images/products/work-proccesse/container-construction-02.webp" data-image-alt="Подготовленные проёмы в синем морском контейнере и снятые панели перед ним" data-image-caption="Подготовка контейнера и устройство проёмов.">
+          <img class="photo-card__media" src="images/products/work-proccesse/container-construction-02.webp" width="1448" height="1086" alt="Подготовленные проёмы в синем морском контейнере и снятые панели перед ним" loading="lazy" decoding="async">
+        </button>
+        <figcaption>Подготовка контейнера и устройство проёмов.</figcaption>
+      </figure>
+      <figure class="photo-card reveal-scale">
+        <button class="photo-card__button" type="button" data-lightbox data-image-src="images/products/work-proccesse/steel-window-door-frames-03.webp" data-image-alt="Металлические рамы разных размеров и сварочное оборудование в производственном цеху" data-image-caption="Металлические рамы перед установкой в подготовленные проёмы.">
+          <img class="photo-card__media" src="images/products/work-proccesse/steel-window-door-frames-03.webp" width="1448" height="1086" alt="Металлические рамы разных размеров и сварочное оборудование в производственном цеху" loading="lazy" decoding="async">
+        </button>
+        <figcaption>Металлические рамы перед установкой в подготовленные проёмы.</figcaption>
+      </figure>
+      <figure class="photo-card reveal-scale">
+        <button class="photo-card__button" type="button" data-lightbox data-image-src="images/products/work-proccesse/container-shipping-02.webp" data-image-alt="Готовый контейнерный модуль с деревянными фасадными вставками на грузовом полуприцепе" data-image-caption="Готовый модуль на грузовом полуприцепе перед отправкой.">
+          <img class="photo-card__media" src="images/products/work-proccesse/container-shipping-02.webp" width="1448" height="1086" alt="Готовый контейнерный модуль с деревянными фасадными вставками на грузовом полуприцепе" loading="lazy" decoding="async">
+        </button>
+        <figcaption>Готовый модуль на грузовом полуприцепе перед отправкой.</figcaption>
+      </figure>
+    </div>
+    <div class="button-row section-gap">
+      <button class="button" type="button" data-modal-open="request-modal" data-modal-title="Записаться на производство" data-request-type="Посещение производства" data-product="Посещение производства в Борисове">Записаться на производство</button>
+      <a class="button button--secondary" href="production.html">Подробнее о производстве</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
   <div class="container">
     <div class="section-header  reveal">
     <div><p class="eyebrow">Процесс</p><h2 class="mt-sm">От идеи до установки.</h2></div>
@@ -78,11 +154,30 @@
   </div>
     <div class="grid grid--3 process section-gap reveal-stagger"><article class="feature-box reveal-up"><h3 class="mt-sm">Первичное обращение</h3><p class="lead">Вы рассказываете об идее, назначении объекта и месте установки. На старте достаточно ощущения задачи — мы поможем превратить его в понятное направление.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Консультация</h3><p class="lead">Уточняем сценарий использования, сезонность, примерный размер, инженерные потребности, условия участка и то, каким должно быть первое впечатление от объекта.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Концепция</h3><p class="lead">Предлагаем формат модуля, планировочную логику, фасадное настроение и состав систем, чтобы функция и образ развивались вместе.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Согласование проекта</h3><p class="lead">Фиксируем конфигурацию, проёмы, материалы, комплектацию и последовательность работ — без размытых обещаний и скрытой неопределённости.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Производство</h3><p class="lead">Готовим конструкцию и собираем модуль в контролируемых условиях: от усилений и инженерии до фасадных деталей и линий света.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Доставка</h3><p class="lead">Заранее проверяем маршрут, подъезд, место разгрузки и готовность основания для безопасной установки.</p></article><article class="feature-box reveal-up"><h3 class="mt-sm">Монтаж и передача</h3><p class="lead">Устанавливаем модуль, выполняем предусмотренные подключения и передаём объект с понятными рекомендациями по эксплуатации.</p></article></div>
   </div>
-</section><section class="section">
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div><p class="eyebrow">FAQ</p><h2 class="mt-sm">Ответы о компании и производстве</h2></div>
+      <p class="lead">Факты о площадке, географии работы, монтаже и гарантийных обязательствах.</p>
+    </div>
+    <div class="faq section-gap reveal-stagger">
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Где находится производство?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Производственная площадка находится в Борисове. Посетить её можно по предварительной записи.</p></div></div></article>
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Можно ли увидеть модуль во время изготовления?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Да. Заказчик может согласовать посещение производства и увидеть текущие этапы реализации своего проекта.</p></div></div></article>
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Работаете ли вы по всей Беларуси?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Да. Организуем доставку и установку модулей в любую точку Республики Беларусь. Стоимость зависит от расстояния, условий подъезда, способа разгрузки и состава монтажных работ.</p></div></div></article>
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Кто выполняет монтаж?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Монтаж может выполнить наша команда. До изготовления мы уточняем требования к основанию, подъезду и месту разгрузки, а состав монтажных работ закрепляем в договоре.</p></div></div></article>
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Какая гарантия предоставляется?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Гарантия на конструкцию, изготовление и выполненные монтажные работы составляет 12 месяцев с даты подписания акта приёмки. Точные условия и перечень гарантийных обязательств фиксируются в договоре. На оборудование действует гарантия производителя.</p></div></div></article>
+      <article class="faq__item reveal-up"><button class="faq__button" type="button" aria-expanded="false">Что нужно подготовить на участке?<span>+</span></button><div class="faq__panel"><div class="faq__content"><p>Необходимо обеспечить подходящее основание, возможность подъезда транспорта и место для безопасной разгрузки. Требования определяются индивидуально после оценки участка.</p></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container split">
     <div class="section-header  reveal">
     <div><p class="eyebrow">Контакт</p><h2 class="mt-sm">Начнём с разговора о пространстве.</h2></div>
-    <p class="lead">Расскажите о задаче, участке или бизнес-сценарии. Мы уточним вводные и предложим следующий шаг.</p>
+    <p class="lead">Расскажите о задаче, участке или бизнес‑сценарии. Мы уточним вводные и предложим следующий шаг.</p>
   </div>
     <div class="form-card reveal-scale"><form class="form" data-nord-form="consultation" novalidate>
     <p class="lead text-small">Даже если у вас пока есть только идея, этого достаточно для начала обсуждения.</p>
@@ -95,16 +190,45 @@
   </form></div>
   </div>
 </section></main>
+<div class="modal" id="request-modal" data-modal aria-hidden="true">
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="request-modal-title" tabindex="-1">
+    <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
+    <div class="modal__header">
+      <p class="eyebrow">Заявка Nord Form</p>
+      <h2 class="mt-sm" id="request-modal-title" data-modal-title>Записаться на производство</h2>
+      <p class="lead mt-md">Оставьте контакты — согласуем удобное время и сообщим точный адрес производственной площадки.</p>
+    </div>
+    <form class="form mt-lg" data-nord-form="visit" novalidate>
+      <input type="hidden" name="request_type" value="Посещение производства">
+      <input type="hidden" name="product" value="Посещение производства в Борисове">
+      <div class="honeypot" aria-hidden="true"><label for="about-request-website">Сайт</label><input id="about-request-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="field"><label for="about-request-name">Имя</label><input id="about-request-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" data-required><p class="field__error"></p></div>
+      <div class="field"><label for="about-request-phone">Телефон</label><input id="about-request-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+375" data-required><p class="field__error"></p></div>
+      <div class="field"><label for="about-request-email">Email</label><input id="about-request-email" name="email" type="email" autocomplete="email" placeholder="mail@example.com"><p class="field__error"></p></div>
+      <div class="field"><label for="about-request-message">Комментарий</label><textarea id="about-request-message" name="message" placeholder="Удобное время или вопрос о посещении"></textarea><p class="field__error"></p></div>
+      <button class="button" type="submit">Отправить заявку</button>
+      <p class="form__status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
 <footer class="site-footer">
   <div class="container site-footer__grid">
     <div>
       <a class="brand" href="index.html"><span class="brand__mark">NF</span><span class="brand__text">NORD FORM</span></a>
       <p class="footer-lead">Архитектура для жизни. Инженерия на десятилетия.</p>
-      <p class="mt-sm">Модульная архитектура из морских контейнеров для жизни, участка и бизнеса.</p>
+      <address class="footer-legal">
+        <p><strong>ООО «СТОРЭДЖ»</strong> · УНП 193825141</p>
+        <p>г. Минск, ул. Мстиславца, 12, помещение 251</p>
+        <p>Производство: г. Борисов</p>
+        <p>Доставка и монтаж по всей Беларуси</p>
+      </address>
     </div>
-    <nav class="footer-nav" aria-label="Навигация в футере"><div><p class="eyebrow">Коллекции</p><div class="grid footer-links mt-sm"><a href="collections/garden-module.html">Садовый модуль</a><a href="collections/hozyistvennyi-module.html">Хозяйственный модуль</a><a href="collections/spa-bath-bany.html">SPA-баня</a><a href="collections/workshop-flowers-module.html">Цветочный модуль</a></div></div><div><p class="eyebrow">Компания</p><div class="grid footer-links mt-sm"><a href="about.html">О компании</a><a href="projects.html">Проекты</a><a href="production.html">Производство</a><a href="blog.html">Блог</a><a href="catalog.html">Каталог</a><a href="contacts.html">Контакты</a></div></div></nav>
+    <nav class="footer-nav" aria-label="Навигация в футере">
+      <div><p class="eyebrow">Коллекции</p><div class="grid footer-links mt-sm"><a href="collections/garden-module.html">Садовый модуль</a><a href="collections/hozyistvennyi-module.html">Хозяйственный модуль</a><a href="collections/spa-bath-bany.html">SPA‑баня</a><a href="collections/workshop-flowers-module.html">Цветочный модуль</a></div></div>
+      <div><p class="eyebrow">Компания</p><div class="grid footer-links mt-sm"><a href="about.html">О компании</a><a href="production.html">Производство</a><a href="contacts.html">Контакты</a><a href="production.html#warranty">Гарантия</a><a href="projects.html">Проекты</a><a href="blog.html">Блог</a></div></div>
+    </nav>
   </div>
-  <div class="container footer-bottom">© 2026 NORD FORM</div>
+  <div class="container footer-bottom"><span>© 2026 NORD FORM</span><span>Nord Form — направление ООО «СТОРЭДЖ»</span></div>
 </footer>
 <script src="js/animations.js"></script>
 <script src="js/forms.js"></script>
