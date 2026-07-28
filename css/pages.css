@@ -4,8 +4,22 @@
   gap: var(--space-xl);
 }
 
+.split > * {
+  min-width: 0;
+}
+
 .split--center {
   align-items: center;
+}
+
+:where(
+  .trust-layout,
+  .visit-layout,
+  .delivery-layout,
+  .legal-layout,
+  .split:not(.philosophy-layout)
+) h2 {
+  font-size: clamp(2.15rem, 4vw, 3.5rem);
 }
 
 .statement {
@@ -96,7 +110,7 @@
 }
 
 .trust-layout .fact-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
 }
 
 .visit-panel,

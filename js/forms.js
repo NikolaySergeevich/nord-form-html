@@ -4,6 +4,7 @@
   const initializedForms = new WeakSet();
   const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
   const storagePrefix = "nord-form:";
+  const leadSubmittedKey = "nord-form:lead-submitted:v1";
 
   function normalizeUtm(value) {
     return typeof value === "string" ? value.trim().slice(0, 200) : "";
@@ -50,6 +51,18 @@
     });
 
     return values;
+  }
+
+  function markLeadSubmitted(formType) {
+    try {
+      window.sessionStorage.setItem(leadSubmittedKey, "1");
+    } catch (error) {
+      // Storage can be unavailable in private or restricted browser contexts.
+    }
+
+    document.dispatchEvent(new CustomEvent("nordform:lead-submitted", {
+      detail: { formType }
+    }));
   }
 
   function setError(field, message) {
@@ -125,6 +138,7 @@
             throw new Error(result.message || "Не удалось отправить заявку.");
           }
 
+          markLeadSubmitted(type);
           form.reset();
           if (status) {
             status.textContent = "Спасибо! Мы получили вашу заявку. В ближайшее время свяжемся с вами для обсуждения проекта.";

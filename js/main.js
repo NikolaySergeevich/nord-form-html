@@ -9,7 +9,163 @@
   ].join(",");
   const scrollLocks = new Set();
   const layers = [];
+  const contactPhone = "+375336919815";
+  const contactPhoneDisplay = "+375 33 691-98-15";
+  const telegramDraft = "Здравствуйте! Хочу обсудить проект Nord Form.";
+  const telegramUrl = `https://t.me/${contactPhone}?text=${encodeURIComponent(telegramDraft)}`;
+  const exitOfferKey = "nord-form:exit-offer:v1";
+  const leadSubmittedKey = "nord-form:lead-submitted:v1";
+  const mainScript = Array.from(document.scripts).find((script) => {
+    return /(?:^|\/)js\/main\.js(?:\?|$)/.test(script.src);
+  });
+  const telegramIconUrl = mainScript
+    ? new URL("../images/icon/free-icon-telegram.webp", mainScript.src).href
+    : "images/icon/free-icon-telegram.webp";
   let closeMobileMenu = null;
+
+  function createPhoneIcon() {
+    const icon = document.createElement("span");
+    icon.className = "contact-icon contact-icon--phone";
+    icon.setAttribute("aria-hidden", "true");
+    icon.innerHTML = `
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.02l-2.2 2.18Z"></path>
+      </svg>
+    `;
+    return icon;
+  }
+
+  function createTelegramIcon() {
+    const image = document.createElement("img");
+    image.className = "contact-icon contact-icon--telegram";
+    image.src = telegramIconUrl;
+    image.width = 512;
+    image.height = 512;
+    image.alt = "";
+    image.setAttribute("aria-hidden", "true");
+    return image;
+  }
+
+  function createContactAction(type) {
+    const link = document.createElement("a");
+    const desktopLabel = document.createElement("span");
+    const mobileLabel = document.createElement("span");
+
+    link.className = `contact-action contact-action--${type}`;
+    link.dataset.contactAction = type;
+    desktopLabel.className = "contact-action__desktop-label";
+    mobileLabel.className = "contact-action__mobile-label";
+
+    if (type === "phone") {
+      link.href = `tel:${contactPhone}`;
+      link.setAttribute("aria-label", `Позвонить по номеру ${contactPhoneDisplay}`);
+      link.title = `Позвонить: ${contactPhoneDisplay}`;
+      desktopLabel.textContent = contactPhoneDisplay;
+      mobileLabel.textContent = "Позвонить";
+      link.append(createPhoneIcon(), desktopLabel, mobileLabel);
+      return link;
+    }
+
+    link.href = telegramUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `Написать в Telegram по номеру ${contactPhoneDisplay}`);
+    link.title = "Написать в Telegram";
+    desktopLabel.textContent = "Telegram";
+    mobileLabel.textContent = "Telegram";
+    link.append(createTelegramIcon(), desktopLabel, mobileLabel);
+    return link;
+  }
+
+  function createExitOfferModal() {
+    const modal = document.createElement("div");
+    modal.className = "modal exit-offer";
+    modal.id = "exit-offer-modal";
+    modal.dataset.modal = "";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML = `
+      <div class="modal__dialog exit-offer__dialog" role="dialog" aria-modal="true" aria-labelledby="exit-offer-title" aria-describedby="exit-offer-description" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
+        <div class="modal__header">
+          <p class="eyebrow">Перед уходом</p>
+          <h2 class="mt-sm" id="exit-offer-title" data-modal-title>Остались вопросы?</h2>
+          <p class="lead mt-md" id="exit-offer-description">Оставьте номер — мы перезвоним, уточним задачу и предложим следующий шаг.</p>
+        </div>
+        <form class="form exit-offer__form mt-lg" data-nord-form="exit-intent" novalidate>
+          <input type="hidden" name="request_type" value="Заявка при выходе">
+          <input type="hidden" name="product" value="Общая консультация">
+          <div class="honeypot" aria-hidden="true"><label for="exit-offer-website">Сайт</label><input id="exit-offer-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="field"><label for="exit-offer-name">Имя</label><input id="exit-offer-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" data-required><p class="field__error"></p></div>
+          <div class="field"><label for="exit-offer-phone">Телефон</label><input id="exit-offer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+375" data-required><p class="field__error"></p></div>
+          <button class="button" type="submit">Оставить заявку</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="exit-offer__alternative">Или свяжитесь с нами сразу:</p>
+        <div class="exit-offer__quick-links"></div>
+        <button class="exit-offer__continue" type="button" data-modal-close>Продолжить просмотр</button>
+      </div>
+    `;
+
+    const quickLinks = modal.querySelector(".exit-offer__quick-links");
+    const phone = createContactAction("phone");
+    const telegram = createContactAction("telegram");
+    phone.classList.add("exit-offer__quick-link");
+    telegram.classList.add("exit-offer__quick-link");
+    quickLinks.append(phone, telegram);
+    return modal;
+  }
+
+  function initGlobalContactUi() {
+    if (document.querySelector("[data-global-contact-ui]")) return null;
+
+    const footerLegal = document.querySelector(".footer-legal");
+    if (footerLegal && !footerLegal.querySelector(".footer-contact")) {
+      const contact = document.createElement("p");
+      const label = document.createElement("span");
+      const phone = document.createElement("a");
+      const separator = document.createElement("span");
+      const telegram = document.createElement("a");
+
+      contact.className = "footer-contact";
+      label.textContent = "Связаться:";
+      phone.href = `tel:${contactPhone}`;
+      phone.dataset.contactAction = "phone";
+      phone.textContent = contactPhoneDisplay;
+      phone.setAttribute("aria-label", `Позвонить по номеру ${contactPhoneDisplay}`);
+      phone.title = `Позвонить: ${contactPhoneDisplay}`;
+      separator.className = "footer-contact__separator";
+      separator.setAttribute("aria-hidden", "true");
+      separator.textContent = "·";
+      telegram.className = "footer-contact__telegram";
+      telegram.href = telegramUrl;
+      telegram.target = "_blank";
+      telegram.rel = "noopener noreferrer";
+      telegram.dataset.contactAction = "telegram";
+      telegram.setAttribute("aria-label", `Написать в Telegram по номеру ${contactPhoneDisplay}`);
+      telegram.title = "Написать в Telegram";
+      telegram.append(createTelegramIcon(), document.createTextNode("Telegram"));
+      contact.append(label, phone, separator, telegram);
+      footerLegal.append(contact);
+    }
+
+    const dock = document.createElement("nav");
+    dock.className = "contact-dock";
+    dock.dataset.globalContactUi = "";
+    dock.setAttribute("aria-label", "Быстрая связь");
+    dock.append(createContactAction("phone"), createContactAction("telegram"));
+
+    const backToTop = document.createElement("button");
+    backToTop.className = "back-to-top";
+    backToTop.type = "button";
+    backToTop.tabIndex = -1;
+    backToTop.setAttribute("aria-label", "Вернуться наверх");
+    backToTop.setAttribute("aria-hidden", "true");
+    backToTop.innerHTML = '<span aria-hidden="true">↑</span>';
+
+    const exitOffer = createExitOfferModal();
+    document.body.append(dock, backToTop, exitOffer);
+    return { backToTop, exitOffer };
+  }
 
   function updateScrollLock(owner, locked) {
     if (locked) {
@@ -140,7 +296,7 @@
       link.addEventListener("click", () => setMenu(false, false));
     });
 
-    const desktopQuery = window.matchMedia("(min-width: 921px)");
+    const desktopQuery = window.matchMedia("(min-width: 1101px)");
     const closeOnDesktop = (event) => {
       if (event.matches && menu.classList.contains("is-open")) {
         setMenu(false, false);
@@ -182,9 +338,42 @@
     });
   }
 
+  function initBackToTop(button) {
+    if (!button) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let visible = false;
+
+    function updateButton() {
+      const shouldShow = window.scrollY > Math.max(520, window.innerHeight * 0.85);
+      if (shouldShow === visible) return;
+
+      visible = shouldShow;
+      button.classList.toggle("is-visible", visible);
+      button.tabIndex = visible ? 0 : -1;
+      button.setAttribute("aria-hidden", String(!visible));
+    }
+
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+    updateButton();
+    window.addEventListener("scroll", updateButton, { passive: true });
+    window.addEventListener("resize", updateButton);
+  }
+
   function initModals() {
     const modalElements = Array.from(document.querySelectorAll("[data-modal]"));
-    if (!modalElements.length) return;
+    if (!modalElements.length) {
+      return {
+        open() {
+          return false;
+        },
+        isOpen() {
+          return false;
+        }
+      };
+    }
 
     let activeState = null;
     const states = modalElements.map((modal, index) => {
@@ -235,6 +424,13 @@
       field.defaultValue = value;
     }
 
+    function findState(reference) {
+      const normalized = String(reference || "").replace(/^#/, "");
+      return states.find((item) => {
+        return item.modal.id === normalized || item.modal.getAttribute("data-modal") === normalized;
+      });
+    }
+
     function closeModal(state, restoreFocus) {
       if (!state.open) return;
 
@@ -253,7 +449,7 @@
       }
     }
 
-    function openModal(state, opener) {
+    function openModal(state, opener, options = {}) {
       if (activeState && activeState !== state) {
         closeModal(activeState, false);
       }
@@ -261,19 +457,27 @@
         closeMobileMenu(false);
       }
 
-      state.opener = opener;
+      const safeOpener = opener && typeof opener.hasAttribute === "function" ? opener : null;
+      state.opener = safeOpener;
       if (state.title) {
-        state.title.textContent = opener.hasAttribute("data-modal-title")
-          ? opener.dataset.modalTitle
-          : state.originalTitle;
+        state.title.textContent = options.title
+          || (safeOpener && safeOpener.hasAttribute("data-modal-title")
+            ? safeOpener.dataset.modalTitle
+            : state.originalTitle);
       }
       setHiddenValue(
         state.requestType,
-        opener.hasAttribute("data-request-type") ? opener.dataset.requestType : state.originalRequestType
+        options.requestType
+          || (safeOpener && safeOpener.hasAttribute("data-request-type")
+            ? safeOpener.dataset.requestType
+            : state.originalRequestType)
       );
       setHiddenValue(
         state.product,
-        opener.hasAttribute("data-product") ? opener.dataset.product : state.originalProduct
+        options.product
+          || (safeOpener && safeOpener.hasAttribute("data-product")
+            ? safeOpener.dataset.product
+            : state.originalProduct)
       );
 
       state.open = true;
@@ -308,15 +512,177 @@
     document.querySelectorAll("[data-modal-open]").forEach((opener) => {
       opener.addEventListener("click", (event) => {
         const reference = (opener.getAttribute("data-modal-open") || "").replace(/^#/, "");
-        const state = states.find((item) => {
-          return item.modal.id === reference || item.modal.getAttribute("data-modal") === reference;
-        });
+        const state = findState(reference);
         if (!state) return;
 
         event.preventDefault();
         openModal(state, opener);
       });
     });
+
+    return {
+      open(reference, options = {}) {
+        const state = findState(reference);
+        if (!state) return false;
+
+        const activeElement = document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
+        openModal(state, options.opener || activeElement, options);
+        return true;
+      },
+      isOpen(reference) {
+        if (!reference) return Boolean(activeState && activeState.open);
+        const state = findState(reference);
+        return Boolean(state && state.open);
+      }
+    };
+  }
+
+  function initExitOffer(modalApi) {
+    if (!modalApi) return;
+
+    let shown = false;
+    let timeReady = false;
+    let engaged = window.scrollY > 120;
+    let footerInView = false;
+    let footerTimer = null;
+    const startedAt = Date.now();
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const compactViewport = window.matchMedia("(max-width: 760px)").matches;
+    const offerDelay = finePointer ? 12000 : 25000;
+
+    function readFlag(key) {
+      try {
+        return window.sessionStorage.getItem(key) === "1";
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function writeFlag(key) {
+      try {
+        window.sessionStorage.setItem(key, "1");
+      } catch (error) {
+        // Storage can be unavailable in private or restricted browser contexts.
+      }
+    }
+
+    function clearFooterTimer() {
+      if (!footerTimer) return;
+      window.clearTimeout(footerTimer);
+      footerTimer = null;
+    }
+
+    function markComplete() {
+      shown = true;
+      clearFooterTimer();
+      writeFlag(exitOfferKey);
+    }
+
+    shown = readFlag(exitOfferKey) || readFlag(leadSubmittedKey);
+
+    function isTimeReady() {
+      return timeReady || Date.now() - startedAt >= offerDelay;
+    }
+
+    function canOpen(bypassDelay) {
+      if (shown || readFlag(leadSubmittedKey)) return false;
+      if (!bypassDelay && (!isTimeReady() || (!engaged && Date.now() - startedAt < 30000))) return false;
+      if (document.visibilityState !== "visible" || layers.length > 0) return false;
+
+      const active = document.activeElement;
+      if (active && active.matches?.("input, textarea, select, [contenteditable='true']")) {
+        return false;
+      }
+      return true;
+    }
+
+    function showOffer(source, bypassDelay = false) {
+      if (!canOpen(bypassDelay)) return false;
+
+      const opened = modalApi.open("exit-offer-modal", {
+        requestType: "Заявка при выходе",
+        product: `Общая консультация · ${source}`
+      });
+      if (!opened) return false;
+
+      markComplete();
+      return true;
+    }
+
+    function scheduleFooterOffer() {
+      if (
+        shown ||
+        !compactViewport ||
+        !footerInView ||
+        !isTimeReady() ||
+        !engaged ||
+        footerTimer
+      ) {
+        return;
+      }
+
+      footerTimer = window.setTimeout(() => {
+        footerTimer = null;
+        if (footerInView) showOffer("мобильный просмотр");
+      }, 1400);
+    }
+
+    window.setTimeout(() => {
+      timeReady = true;
+      scheduleFooterOffer();
+    }, offerDelay);
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 120) engaged = true;
+      scheduleFooterOffer();
+    }, { passive: true });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (event.target.closest?.("[data-contact-action]")) {
+        markComplete();
+        return;
+      }
+      engaged = true;
+    }, { passive: true });
+
+    document.addEventListener("keydown", () => {
+      engaged = true;
+    }, { passive: true });
+
+    document.addEventListener("nordform:lead-submitted", () => {
+      markComplete();
+    });
+
+    if (finePointer) {
+      document.documentElement.addEventListener("mouseleave", (event) => {
+        if (event.relatedTarget === null && event.clientY <= 0) {
+          showOffer("попытка ухода");
+        }
+      });
+    }
+
+    const footer = document.querySelector(".site-footer");
+    if (footer && compactViewport && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        footerInView = entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.45);
+        if (footerInView) {
+          scheduleFooterOffer();
+        } else {
+          clearFooterTimer();
+        }
+      }, { threshold: [0, 0.45, 0.75] });
+      observer.observe(footer);
+    }
+
+    window.NordFormContact = {
+      phone: contactPhone,
+      telegramUrl,
+      openExitOffer() {
+        return showOffer("ручное открытие", true);
+      }
+    };
   }
 
   function initLightbox() {
@@ -418,9 +784,12 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    const contactUi = initGlobalContactUi();
     initHeader();
     initSmoothScroll();
-    initModals();
+    initBackToTop(contactUi?.backToTop);
+    const modalApi = initModals();
+    initExitOffer(modalApi);
     initLightbox();
     window.NordFormForms?.init();
     window.NordFormAnimations?.init();
