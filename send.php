@@ -128,6 +128,9 @@ $typeNames = [
     'calculation' => 'Расчёт проекта',
     'visit' => 'Посещение производства',
     'garden-calculation' => 'Расчёт садового модуля',
+    'hozyistvennyi-calculation' => 'Расчёт хозяйственного модуля',
+    'spa-bath-calculation' => 'Расчёт SPA-бани',
+    'flowers-calculation' => 'Расчёт цветочного модуля',
     'delivery-consultation' => 'Консультация по доставке и монтажу',
 ];
 $productNames = [
