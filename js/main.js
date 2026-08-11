@@ -338,6 +338,27 @@
     });
   }
 
+  function initCatalogDownloads() {
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest?.("[data-catalog-download]");
+      if (!link) return;
+
+      const payload = {
+        catalog_name: "NORD FORM catalog",
+        source: link.dataset.catalogSource || (link.closest(".site-header") ? "header" : "site_catalog_link"),
+        file_type: "pdf"
+      };
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "catalog_download", payload);
+      } else if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: "catalog_download", ...payload });
+      }
+
+      document.dispatchEvent(new CustomEvent("nordform:catalog-download", { detail: payload }));
+    });
+  }
+
   function initBackToTop(button) {
     if (!button) return;
 
@@ -787,6 +808,7 @@
     const contactUi = initGlobalContactUi();
     initHeader();
     initSmoothScroll();
+    initCatalogDownloads();
     initBackToTop(contactUi?.backToTop);
     const modalApi = initModals();
     initExitOffer(modalApi);
