@@ -12,7 +12,7 @@
   const contactPhone = "+375336919815";
   const contactPhoneDisplay = "+375 33 691-98-15";
   const telegramDraft = "Здравствуйте! Хочу обсудить проект Nord Form.";
-  const telegramUrl = `https://t.me/${contactPhone}?text=${encodeURIComponent(telegramDraft)}`;
+  const telegramUrl = `https://t.me/NikGichik?text=${encodeURIComponent(telegramDraft)}`;
   const exitOfferKey = "nord-form:exit-offer:v1";
   const leadSubmittedKey = "nord-form:lead-submitted:v1";
   const mainScript = Array.from(document.scripts).find((script) => {
@@ -69,7 +69,7 @@
     link.href = telegramUrl;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", `Написать в Telegram по номеру ${contactPhoneDisplay}`);
+    link.setAttribute("aria-label", "Написать @NikGichik в Telegram");
     link.title = "Написать в Telegram";
     desktopLabel.textContent = "Telegram";
     mobileLabel.textContent = "Telegram";
@@ -141,7 +141,7 @@
       telegram.target = "_blank";
       telegram.rel = "noopener noreferrer";
       telegram.dataset.contactAction = "telegram";
-      telegram.setAttribute("aria-label", `Написать в Telegram по номеру ${contactPhoneDisplay}`);
+      telegram.setAttribute("aria-label", "Написать @NikGichik в Telegram");
       telegram.title = "Написать в Telegram";
       telegram.append(createTelegramIcon(), document.createTextNode("Telegram"));
       contact.append(label, phone, separator, telegram);
