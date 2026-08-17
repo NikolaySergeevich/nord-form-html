@@ -95,13 +95,27 @@
   box-shadow: var(--shadow-md);
 }
 
-.catalog-preview iframe {
+.catalog-preview iframe,
+.catalog-preview img {
   display: block;
   width: 100%;
   height: 100%;
-  border: 0;
   border-radius: calc(var(--radius-lg) - 6px);
+}
+
+.catalog-preview iframe {
+  border: 0;
   background: var(--surface-elevated);
+}
+
+.catalog-preview img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-base);
+}
+
+.catalog-preview:hover img {
+  transform: scale(1.03);
 }
 
 .catalog-preview--hero {
